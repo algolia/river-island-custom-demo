@@ -1,7 +1,6 @@
 import React from 'react'
 
-// IMPORT AASSET
-import headerBand from '../../Assets/Images/headerBand.png';
+// IMPORT ASSETS
 import img1 from '../../Assets/Images/img1.png';
 import img2 from '../../Assets/Images/img2.png';
 import img3 from '../../Assets/Images/img3.png';

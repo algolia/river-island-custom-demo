@@ -4,11 +4,6 @@ import React from 'react';
 import headerUp from '../../Assets/Images/headerUp.png';
 import SelectPersona from './Persona'
 
-//FONT AWESOME
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPalette } from '@fortawesome/free-solid-svg-icons'
-
-
 const Header = ({
     setSelectedOption,
     setSearchVisible,
