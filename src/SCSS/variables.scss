@@ -9,7 +9,7 @@ $seventh-color: #e2e2e5;
 
 // FONTS
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
-$main-font: "Oswald", sans-serif;
+$main-font: 'proxima-nova', Arial, Helvetica;
 
 //MAIN STYLING
 * {
@@ -37,4 +37,8 @@ ul {
     list-style: none;
     font-family: $main-font;
     color: $main-color;
+    font-size: .9375rem;
+    font-weight: 500;
+    line-height: 16px;
+    text-transform: capitalize;
 }

@@ -5,7 +5,8 @@
 }
 
 .header-wrapper {
-    width: 95%;
+    width: 70%;
+    height: 4.2rem;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -20,7 +21,7 @@
         }
 
         li {
-            margin: 0 0.5rem;
+            margin: 0 1rem;
             font-weight: 500;
             cursor: pointer;
             position: relative;
@@ -55,21 +56,25 @@
     }
 
     .logo {
-        width: 10%;
         cursor: pointer;
+        width: 164px;
+        height: 60px;
     }
 
     .search-wrapper {
         border-left: 1px solid $third-color;
-        width: 10%;
+        width: 140px;;
         display: flex;
         align-items: center;
         cursor: pointer;
         .search-placeholder {
-            color: $main-color;
-            font-weight: 200;
-            font-size: 1rem;
-            margin-left: 1rem;
+            width: 140px;
+            font-weight: 500;
+            text-align: left;
+            padding: 4px 0 2px;
+            border-bottom: 2px solid #000;
+            background: #fff;
+            font-size: 16px;
         }
         svg {
             width: 30px;
