@@ -4,15 +4,15 @@ import './index.css';
 import App from './App';
 
 //CHANGE ME IF USING NEW INDEX
-window.appID = 'JDBD6EJM33'
-window.key = '0fe54b2e3991d370c91376981aff9d48'
-window.index = "rayban_merged"
+window.appID = 'RSBCBF0EG8'
+window.key = 'e740caae53c72e09463a1117854491d5'
+window.index = "riverIsland_customDemo_products"
 
 //SORTBY
-window.index_asc = "rayban_merged_price_asc"
-window.index_desc = "rayban_merged_price_dsc"
+window.index_asc = "riverIsland_customDemo_products"
+window.index_desc = "riverIsland_customDemo_products"
 
 // QUERY SUGG
-window.indexSugg = "rayban_merged_query_suggestions"
+window.indexSugg = "riverIsland_customDemo_products"
 
 ReactDOM.render(<App />, document.getElementById('root'));

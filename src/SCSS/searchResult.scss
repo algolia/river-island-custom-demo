@@ -1,5 +1,5 @@
-@import "./variables.scss";
-@import "./mixin.scss";
+@import './variables.scss';
+@import './mixin.scss';
 
 .searchResult-wrapper {
     width: 100%;
@@ -92,6 +92,11 @@
 
     .hit-list {
         @include hit-list;
+    }
+    .title-hit {
+        span {
+            font-size: 14px;
+        }
     }
 }
 

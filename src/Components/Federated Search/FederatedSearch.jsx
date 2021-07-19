@@ -1,8 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 // ALGOLIA IMPORT
 import { Configure } from 'react-instantsearch-dom';
-
 
 // COMPONENT IMPORT
 import { CustomHits } from '../Searchpage/Hits';
@@ -10,10 +9,16 @@ import CustomSuggestions from '../Searchpage/Suggestions';
 // import {HierarchicalMenu, CatRefinementLists, CustomFilters, CustomCateRefinementList} from '../Searchage/Filters'
 import CustomSearchBox from '../Searchpage/SearchBox';
 
-
-
-
-const FederatedSearch = ({ query, setQuery, setShowFederatedSearch, showFederatedSearch, searchVisible, setSearchVisible, setProduct, setModal }) => {
+const FederatedSearch = ({
+    query,
+    setQuery,
+    setShowFederatedSearch,
+    showFederatedSearch,
+    searchVisible,
+    setSearchVisible,
+    setProduct,
+    setModal
+}) => {
     return (
         <div className="federatedSearch">
             <div className="federatedSearch-wrapper">
@@ -31,14 +36,26 @@ const FederatedSearch = ({ query, setQuery, setShowFederatedSearch, showFederate
                     <CustomSuggestions query={query} setQuery={setQuery} />
                 </div>
                 <div className="federatedSearch-products">
-                    <CustomSearchBox query={query} setQuery={setQuery} setShowFederatedSearch={setShowFederatedSearch} showFederatedSearch={showFederatedSearch} searchVisible={searchVisible} setSearchVisible={setSearchVisible} />
+                    <CustomSearchBox
+                        query={query}
+                        setQuery={setQuery}
+                        setShowFederatedSearch={setShowFederatedSearch}
+                        showFederatedSearch={showFederatedSearch}
+                        searchVisible={searchVisible}
+                        setSearchVisible={setSearchVisible}
+                    />
                     <h3 className="federated-title">Products</h3>
                     <Configure hitsPerPage={20} />
-                    <CustomHits setProduct={setProduct} setModal={setModal} setShowFederatedSearch={setShowFederatedSearch} setSearchVisible={setSearchVisible} />
+                    <CustomHits
+                        setProduct={setProduct}
+                        setModal={setModal}
+                        setShowFederatedSearch={setShowFederatedSearch}
+                        setSearchVisible={setSearchVisible}
+                    />
                 </div>
             </div>
         </div>
     );
-}
+};
 
 export default FederatedSearch;
