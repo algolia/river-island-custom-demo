@@ -11,7 +11,7 @@ import Homepage from './Components/Homepage/Homepage';
 
 const App = () => {
     const [searchVisible, setSearchVisible] = useState(false);
-    const [catOne, setCatOne] = useState(false);
+    const [women, setWomen] = useState(false);
     const [catTwo, setCatTwo] = useState(false);
     const [selectedOption, setSelectedOption] = useState(null);
     const [query, setQuery] = useState('');
@@ -22,8 +22,8 @@ const App = () => {
                 setSelectedOption={setSelectedOption}
                 searchVisible={searchVisible}
                 setSearchVisible={setSearchVisible}
-                catOne={catOne}
-                setCatOne={setCatOne}
+                women={women}
+                setWomen={setWomen}
                 catTwo={catTwo}
                 setCatTwo={setCatTwo}
                 setShowFederatedSearch={setShowFederatedSearch}
@@ -33,7 +33,7 @@ const App = () => {
                 selectedOption={selectedOption}
                 searchVisible={searchVisible}
                 setSearchVisible={setSearchVisible}
-                catOne={catOne}
+                women={women}
                 catTwo={catTwo}
                 query={query}
                 setQuery={setQuery}
@@ -42,7 +42,7 @@ const App = () => {
             />
             <Homepage
                 searchVisible={searchVisible}
-                catOne={catOne}
+                women={women}
                 catTwo={catTwo}
             />
         </div>

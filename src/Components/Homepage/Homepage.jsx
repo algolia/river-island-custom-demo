@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 // IMPORT ASSETS
 import img1 from '../../Assets/Images/img1.png';
@@ -7,9 +7,13 @@ import img3 from '../../Assets/Images/img3.png';
 import img4 from '../../Assets/Images/img4.png';
 import footer from '../../Assets/Images/img5.png';
 
-const Homepage = ({ searchVisible, catTwo, catOne }) => {
+const Homepage = ({ searchVisible, catTwo, women }) => {
     return (
-        <div className={`homepage-wrapper ${searchVisible || catOne || catTwo ? 'hidden' : 'active'}`}>
+        <div
+            className={`homepage-wrapper ${
+                searchVisible || women || catTwo ? 'hidden' : 'active'
+            }`}
+        >
             {/* <div>
                 <img src={headerBand} alt="home" />
             </div> */}
@@ -30,6 +34,6 @@ const Homepage = ({ searchVisible, catTwo, catOne }) => {
             </div>
         </div>
     );
-}
+};
 
 export default Homepage;

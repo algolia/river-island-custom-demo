@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 // ALGOLIA'S IMPORT
 import {
     connectRefinementList,
-    connectHierarchicalMenu,
+    connectHierarchicalMenu
     // connectRange
 } from 'react-instantsearch-dom';
 
@@ -290,48 +290,48 @@ const GenderRefinementList = ({ items, refine }) => {
 
 const CustomGenderRefinementList = connectRefinementList(GenderRefinementList);
 
-// FRAMEMATERIAL
-// const MaterialRefinementList = ({ items, refine }) => {
-//     const [materials, setMaterials] = useState(true);
-//     return (
-//         <div className="filters-content">
-//             <div
-//                 className="title"
-//                 onClick={() => {
-//                     setMaterials(!materials);
-//                 }}
-//             >
-//                 <h3>Frame Material</h3>
-//                 <p>-</p>
-//             </div>
-//             <ul
-//                 className={`filter-list-content ${
-//                     materials ? 'active-filters' : 'hidden-filters'
-//                 }`}
-//             >
-//                 {items.map(item => (
-//                     <li className="filter-list" key={item.label}>
-//                         <button
-//                             className="button-filter"
-//                             href="#"
-//                             onClick={event => {
-//                                 event.preventDefault();
-//                                 refine(item.value);
-//                             }}
-//                         >
-//                             {item.label}
-//                         </button>
-//                     </li>
-//                 ))}
-//             </ul>
-//             <div className="line"></div>
-//         </div>
-//     );
-// };
+// CATEGORIE REFINEMENT
+const CategoriesRefinementList = ({ items, refine }) => {
+    const [materials, setMaterials] = useState(true);
+    return (
+        <div className="filters-content">
+            <div
+                className="title"
+                onClick={() => {
+                    setMaterials(!materials);
+                }}
+            >
+                <h3>Frame Material</h3>
+                <p>-</p>
+            </div>
+            <ul
+                className={`filter-list-content ${
+                    materials ? 'active-filters' : 'hidden-filters'
+                }`}
+            >
+                {items.map(item => (
+                    <li className="filter-list" key={item.label}>
+                        <button
+                            className="button-filter"
+                            href="#"
+                            onClick={event => {
+                                event.preventDefault();
+                                refine(item.value);
+                            }}
+                        >
+                            {item.label.split('>')[1]}
+                        </button>
+                    </li>
+                ))}
+            </ul>
+            <div className="line"></div>
+        </div>
+    );
+};
 
-// const CustomMaterialRefinementList = connectRefinementList(
-//     MaterialRefinementList
-// );
+const CustomCategoriesRefinementList = connectRefinementList(
+    CategoriesRefinementList
+);
 
 // Price Filter
 // const RangeSlider = ({ min, max, currentRefinement, canRefine, refine }) => {
@@ -411,7 +411,7 @@ const CustomFilters = ({
                 ) : (
                     <div>
                         <CustomGenderRefinementList attribute="breadcrumbs.lvl0" />
-                        {/* <CustomMaterialRefinementList attribute="FRAMEMATERIAL" /> */}
+                        <CustomCategoriesRefinementList attribute="breadcrumbs.lvl1" />
                         {/* <CustomGenderRefinementList attribute="GENDER" /> */}
                         {/* <CustomColorRefinementList attribute="color" /> */}
                         {/* <CustomSizeRefinementList attribute="size" /> */}
@@ -432,7 +432,7 @@ const CustomFilters = ({
 
 export {
     CustomFilters,
-    HierarchicalMenu,
+    HierarchicalMenu
     // CatRefinementLists,
     // CustomCateRefinementList
 };

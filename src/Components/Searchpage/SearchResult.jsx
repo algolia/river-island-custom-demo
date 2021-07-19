@@ -22,7 +22,7 @@ const SearchResults = ({
     selectedOption,
     searchVisible,
     setSearchVisible,
-    catOne,
+    women,
     catTwo,
     showFederatedSearch,
     setShowFederatedSearch
@@ -55,7 +55,7 @@ const SearchResults = ({
                 </div>
                 <div
                     className={`container ${
-                        searchVisible || catOne || catTwo ? 'active' : 'hidden'
+                        searchVisible || women || catTwo ? 'active' : 'hidden'
                     }`}
                 >
                     <QueryRuleCustomData
@@ -93,15 +93,14 @@ const SearchResults = ({
                         </Index>
                         <Banner />
 
-                        {catOne ? (
+                        {women ? (
                             <div className="searchPanel-results">
                                 <FilterBtn
                                     filterAnim={filterAnim}
                                     setFilterAnim={setFilterAnim}
                                 />
                                 <Configure
-                                    userToken={selectedOption}
-                                    filters="categorylvl3:One"
+                                    filters="breadcrumbs.lvl0:women"
                                     enablePersonalization={true}
                                 />
                                 <CustomFilters
@@ -138,11 +137,11 @@ const SearchResults = ({
                                     filters="categorylvl3:'Vision Care'"
                                     enablePersonalization={true}
                                 />
-                                <CustomFilters
+                                {/* <CustomFilters
                                     filterAnim={filterAnim}
                                     isDynamicFactesOn={isDynamicFactesOn}
                                     setIsDynamicFactesOn={setIsDynamicFactesOn}
-                                />
+                                /> */}
                                 <CustomHits
                                     setModal={setModal}
                                     setProduct={setProduct}
@@ -171,11 +170,11 @@ const SearchResults = ({
                                     filterAnim={filterAnim}
                                     setFilterAnim={setFilterAnim}
                                 />
-                                <CustomFilters
+                                {/* <CustomFilters
                                     filterAnim={filterAnim}
                                     isDynamicFactesOn={isDynamicFactesOn}
                                     setIsDynamicFactesOn={setIsDynamicFactesOn}
-                                />
+                                /> */}
                                 <CustomHits
                                     setModal={setModal}
                                     setProduct={setProduct}

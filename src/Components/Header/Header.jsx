@@ -7,7 +7,7 @@ import SelectPersona from './Persona'
 const Header = ({
     setSelectedOption,
     setSearchVisible,
-    setCatOne,
+    setWomen,
     setCatTwo,
     showFederatedSearch,
     setShowFederatedSearch
@@ -22,7 +22,7 @@ const Header = ({
                     viewBox="0 0 305.1 35.2"
                     width="164" height="60"
                     onClick={() => {
-                        setCatOne(false);
+                        setWomen(false);
                         setSearchVisible(false);
                         setCatTwo(false);
                     }}
@@ -42,7 +42,7 @@ const Header = ({
                 <ul>
                     <li
                         onClick={() => {
-                            setCatOne(true);
+                            setWomen(true);
                             setSearchVisible(false);
                             setCatTwo(false);
                             setShowFederatedSearch(false)
@@ -53,7 +53,7 @@ const Header = ({
                     <li
                         onClick={() => {
                             setCatTwo(true);
-                            setCatOne(false);
+                            setWomen(false);
                             setSearchVisible(false);
                             setShowFederatedSearch(false)
                         }}
@@ -72,7 +72,7 @@ const Header = ({
                     onClick={() => {
                         setShowFederatedSearch(!showFederatedSearch)
                         setCatTwo(false);
-                        setCatOne(false);
+                        setWomen(false);
                     }}
                 >
                     <p className="search-placeholder">Search</p>
