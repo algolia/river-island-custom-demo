@@ -18,8 +18,8 @@ const Hits = ({
                     defaultRefinement={window.index}
                     items={[
                         {
-                            value: window.index,
-                            label: 'Relevancy'
+                            value: window.index_new,
+                            label: 'Newness'
                         },
                         {
                             value: window.index_desc,

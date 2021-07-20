@@ -2,13 +2,15 @@ import React from 'react';
 
 // COMPONENT IMPORT
 import headerUp from '../../Assets/Images/headerUp.png';
-import SelectPersona from './Persona'
+import SelectPersona from './Persona';
 
 const Header = ({
     setSelectedOption,
     setSearchVisible,
     setWomen,
-    setCatTwo,
+    setMen,
+    setGirls,
+    setBoys,
     showFederatedSearch,
     setShowFederatedSearch
 }) => {
@@ -20,11 +22,14 @@ const Header = ({
                     className="logo"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 305.1 35.2"
-                    width="164" height="60"
+                    width="164"
+                    height="60"
                     onClick={() => {
                         setWomen(false);
                         setSearchVisible(false);
-                        setCatTwo(false);
+                        setMen(false);
+                        setGirls(false);
+                        setBoys(false);
                     }}
                 >
                     <path d="M107.4 17.1c2.4 0 4.1-0.3 5.5-1.1 1.8-1.1 2.6-3 2.6-5.4 0-2.6-0.9-4.2-2.4-5.2 -1.3-0.9-3.1-1.3-5.8-1.3h-3.1v30.6h-5.3V0.7h9.3c3.5 0 6.4 0.4 8.9 1.9 3.8 2.5 3.9 6.4 3.9 7.3 0 4.2-2.3 7.4-6.4 8.8 -0.4 0.1-0.8 0.2-1.2 0.3l10.9 15.5h-6l-12-17.5H107.4z"></path>
@@ -44,35 +49,64 @@ const Header = ({
                         onClick={() => {
                             setWomen(true);
                             setSearchVisible(false);
-                            setCatTwo(false);
-                            setShowFederatedSearch(false)
+                            setMen(false);
+                            setGirls(false);
+                            setBoys(false);
+                            setShowFederatedSearch(false);
                         }}
                     >
                         Women
                     </li>
                     <li
                         onClick={() => {
-                            setCatTwo(true);
+                            setMen(true);
                             setWomen(false);
+                            setGirls(false);
+                            setBoys(false);
                             setSearchVisible(false);
-                            setShowFederatedSearch(false)
+                            setShowFederatedSearch(false);
                         }}
                     >
                         Men
                     </li>
-                    <li>Girls</li>
-                    <li>Boys</li>
+                    <li
+                        onClick={() => {
+                            setMen(false);
+                            setWomen(false);
+                            setGirls(true);
+                            setBoys(false);
+                            setSearchVisible(false);
+                            setShowFederatedSearch(false);
+                        }}
+                    >
+                        Girls
+                    </li>
+                    <li
+                        onClick={() => {
+                            setMen(false);
+                            setWomen(false);
+                            setGirls(true);
+                            setBoys(true);
+                            setSearchVisible(false);
+                            setShowFederatedSearch(false);
+                        }}
+                    >
+                        Boys
+                    </li>
                     <li>Sale</li>
                     <li>Summer Shop</li>
                     <li>Editorial</li>
-                    <li><SelectPersona setSelectedOption={setSelectedOption} /></li>
+                    <li>
+                        <SelectPersona setSelectedOption={setSelectedOption} />
+                    </li>
                 </ul>
                 <div
                     className="search-wrapper"
                     onClick={() => {
-                        setShowFederatedSearch(!showFederatedSearch)
-                        setCatTwo(false);
+                        setShowFederatedSearch(!showFederatedSearch);
+                        setMen(false);
                         setWomen(false);
+                        setGirls(false);
                     }}
                 >
                     <p className="search-placeholder">Search</p>
@@ -90,7 +124,6 @@ const Header = ({
                             fill="#030A2B"
                         />
                     </svg>
-                    
                 </div>
             </div>
         </header>

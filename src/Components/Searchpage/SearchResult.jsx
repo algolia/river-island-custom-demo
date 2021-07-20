@@ -23,7 +23,9 @@ const SearchResults = ({
     searchVisible,
     setSearchVisible,
     women,
-    catTwo,
+    men,
+    girls,
+    boys,
     showFederatedSearch,
     setShowFederatedSearch
 }) => {
@@ -55,7 +57,9 @@ const SearchResults = ({
                 </div>
                 <div
                     className={`container ${
-                        searchVisible || women || catTwo ? 'active' : 'hidden'
+                        searchVisible || women || men || girls || boys
+                            ? 'active'
+                            : 'hidden'
                     }`}
                 >
                     <QueryRuleCustomData
@@ -126,7 +130,7 @@ const SearchResults = ({
                             // </div>
                             ''
                         )}
-                        {catTwo ? (
+                        {men ? (
                             <div className="searchPanel-results">
                                 <FilterBtn
                                     filterAnim={filterAnim}
@@ -134,14 +138,82 @@ const SearchResults = ({
                                 />
                                 <Configure
                                     userToken={selectedOption}
-                                    filters="categorylvl3:'Vision Care'"
+                                    filters="breadcrumbs.lvl0:men"
                                     enablePersonalization={true}
                                 />
-                                {/* <CustomFilters
+                                <CustomFilters
                                     filterAnim={filterAnim}
                                     isDynamicFactesOn={isDynamicFactesOn}
                                     setIsDynamicFactesOn={setIsDynamicFactesOn}
-                                /> */}
+                                />
+                                <CustomHits
+                                    setModal={setModal}
+                                    setProduct={setProduct}
+                                    setShowFederatedSearch={
+                                        setShowFederatedSearch
+                                    }
+                                    setSearchVisible={setSearchVisible}
+                                />
+                            </div>
+                        ) : (
+                            // <div className="searchPanel-results">
+                            //     <Configure userToken={selectedOption} enablePersonalization={true} />
+                            //     <FilterBtn filterAnim={filterAnim} setFilterAnim={setFilterAnim} />
+                            //     <CustomFilters filterAnim={filterAnim} />
+                            //     <CustomHits setProduct={setProduct} setModal={setModal} />
+                            // </div>
+                            ''
+                        )}
+                        {girls ? (
+                            <div className="searchPanel-results">
+                                <FilterBtn
+                                    filterAnim={filterAnim}
+                                    setFilterAnim={setFilterAnim}
+                                />
+                                <Configure
+                                    userToken={selectedOption}
+                                    filters="breadcrumbs.lvl0:girls"
+                                    enablePersonalization={true}
+                                />
+                                <CustomFilters
+                                    filterAnim={filterAnim}
+                                    isDynamicFactesOn={isDynamicFactesOn}
+                                    setIsDynamicFactesOn={setIsDynamicFactesOn}
+                                />
+                                <CustomHits
+                                    setModal={setModal}
+                                    setProduct={setProduct}
+                                    setShowFederatedSearch={
+                                        setShowFederatedSearch
+                                    }
+                                    setSearchVisible={setSearchVisible}
+                                />
+                            </div>
+                        ) : (
+                            // <div className="searchPanel-results">
+                            //     <Configure userToken={selectedOption} enablePersonalization={true} />
+                            //     <FilterBtn filterAnim={filterAnim} setFilterAnim={setFilterAnim} />
+                            //     <CustomFilters filterAnim={filterAnim} />
+                            //     <CustomHits setProduct={setProduct} setModal={setModal} />
+                            // </div>
+                            ''
+                        )}
+                        {boys ? (
+                            <div className="searchPanel-results">
+                                <FilterBtn
+                                    filterAnim={filterAnim}
+                                    setFilterAnim={setFilterAnim}
+                                />
+                                <Configure
+                                    userToken={selectedOption}
+                                    filters="breadcrumbs.lvl0:boys"
+                                    enablePersonalization={true}
+                                />
+                                <CustomFilters
+                                    filterAnim={filterAnim}
+                                    isDynamicFactesOn={isDynamicFactesOn}
+                                    setIsDynamicFactesOn={setIsDynamicFactesOn}
+                                />
                                 <CustomHits
                                     setModal={setModal}
                                     setProduct={setProduct}

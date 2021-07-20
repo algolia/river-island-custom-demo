@@ -12,7 +12,9 @@ import Homepage from './Components/Homepage/Homepage';
 const App = () => {
     const [searchVisible, setSearchVisible] = useState(false);
     const [women, setWomen] = useState(false);
-    const [catTwo, setCatTwo] = useState(false);
+    const [men, setMen] = useState(false);
+    const [girls, setGirls] = useState(false);
+    const [boys, setBoys] = useState(false);
     const [selectedOption, setSelectedOption] = useState(null);
     const [query, setQuery] = useState('');
     const [showFederatedSearch, setShowFederatedSearch] = useState(false);
@@ -24,8 +26,12 @@ const App = () => {
                 setSearchVisible={setSearchVisible}
                 women={women}
                 setWomen={setWomen}
-                catTwo={catTwo}
-                setCatTwo={setCatTwo}
+                men={men}
+                setMen={setMen}
+                girls={girls}
+                boys={boys}
+                setBoys={setBoys}
+                setGirls={setGirls}
                 setShowFederatedSearch={setShowFederatedSearch}
                 showFederatedSearch={showFederatedSearch}
             />
@@ -34,17 +40,15 @@ const App = () => {
                 searchVisible={searchVisible}
                 setSearchVisible={setSearchVisible}
                 women={women}
-                catTwo={catTwo}
+                men={men}
+                girls={girls}
+                boys={boys}
                 query={query}
                 setQuery={setQuery}
                 setShowFederatedSearch={setShowFederatedSearch}
                 showFederatedSearch={showFederatedSearch}
             />
-            <Homepage
-                searchVisible={searchVisible}
-                women={women}
-                catTwo={catTwo}
-            />
+            <Homepage searchVisible={searchVisible} women={women} men={men} />
         </div>
     );
 };

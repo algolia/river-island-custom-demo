@@ -41,11 +41,11 @@ const SearchBox = ({
                 </form>
                 <VoiceSearch searchAsYouSpeak={false} language={'en-US'} />
             </div>
-            <CustomCurrentRefinements
+            {/* <CustomCurrentRefinements
                 transformItems={items =>
                     items.filter(item => item.attribute !== 'price')
                 }
-            />
+            /> */}
         </div>
     );
 };

@@ -210,44 +210,47 @@ const HierarchicalMenu = connectHierarchicalMenu(CatFilter);
 // );
 
 // Frame Shape Description
-// const FrameShapeRefinementList = ({ items, refine }) => {
-//     const [frameShapes, setFrameShapes] = useState(true);
-//     return (
-//         <div className="filters-content">
-//             <div
-//                 className="title"
-//                 onClick={() => {
-//                     setFrameShapes(!frameShapes);
-//                 }}
-//             >
-//                 <h3>Frame Shapes</h3>
-//                 <p>-</p>
-//             </div>
-//             <ul
-//                 className={`filter-list-content ${frameShapes ? 'active-filters' : 'hidden-filters'
-//                     }`}
-//             >
-//                 {items.map(item => (
-//                     <li className="filter-list" key={item.label}>
-//                         <button
-//                             className="button-filter"
-//                             href="#"
-//                             onClick={event => {
-//                                 event.preventDefault();
-//                                 refine(item.value);
-//                             }}
-//                         >
-//                             {item.label}
-//                         </button>
-//                     </li>
-//                 ))}
-//             </ul>
-//             <div className="line"></div>
-//         </div>
-//     );
-// };
+const FrameShapeRefinementList = ({ items, refine }) => {
+    const [frameShapes, setFrameShapes] = useState(true);
+    return (
+        <div className="filters-content">
+            <div
+                className="title"
+                onClick={() => {
+                    setFrameShapes(!frameShapes);
+                }}
+            >
+                <h3>Type</h3>
+                <p>-</p>
+            </div>
+            <ul
+                className={`filter-list-content ${
+                    frameShapes ? 'active-filters' : 'hidden-filters'
+                }`}
+            >
+                {items.map(item => (
+                    <li className="filter-list" key={item.label}>
+                        <button
+                            className="button-filter"
+                            href="#"
+                            onClick={event => {
+                                event.preventDefault();
+                                refine(item.value);
+                            }}
+                        >
+                            {item.label.split('>')[2]}
+                        </button>
+                    </li>
+                ))}
+            </ul>
+            <div className="line"></div>
+        </div>
+    );
+};
 
-// const CustomGenderRefinementList = connectRefinementList(FrameShapeRefinementList);
+const CustomTypeRefinementList = connectRefinementList(
+    FrameShapeRefinementList
+);
 
 // GENDER
 const GenderRefinementList = ({ items, refine }) => {
@@ -301,7 +304,7 @@ const CategoriesRefinementList = ({ items, refine }) => {
                     setMaterials(!materials);
                 }}
             >
-                <h3>Frame Material</h3>
+                <h3>Category</h3>
                 <p>-</p>
             </div>
             <ul
@@ -412,7 +415,7 @@ const CustomFilters = ({
                     <div>
                         <CustomGenderRefinementList attribute="breadcrumbs.lvl0" />
                         <CustomCategoriesRefinementList attribute="breadcrumbs.lvl1" />
-                        {/* <CustomGenderRefinementList attribute="GENDER" /> */}
+                        <CustomTypeRefinementList attribute="breadcrumbs.lvl2" />
                         {/* <CustomColorRefinementList attribute="color" /> */}
                         {/* <CustomSizeRefinementList attribute="size" /> */}
                     </div>
