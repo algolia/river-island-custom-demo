@@ -5,11 +5,11 @@ import React from 'react';
 import {
     connectSearchBox,
     VoiceSearch,
-    connectCurrentRefinements
+    // connectCurrentRefinements
 } from 'react-instantsearch-dom';
 
 // UNIQBY LIB
-import uniqBy from 'lodash.uniqby';
+// import uniqBy from 'lodash.uniqby';
 
 const SearchBox = ({
     refine,
