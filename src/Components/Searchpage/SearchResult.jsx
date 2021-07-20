@@ -26,6 +26,7 @@ const SearchResults = ({
     men,
     girls,
     boys,
+    sale,
     showFederatedSearch,
     setShowFederatedSearch
 }) => {
@@ -57,7 +58,7 @@ const SearchResults = ({
                 </div>
                 <div
                     className={`container ${
-                        searchVisible || women || men || girls || boys
+                        searchVisible || women || men || girls || boys || sale
                             ? 'active'
                             : 'hidden'
                     }`}
@@ -208,6 +209,40 @@ const SearchResults = ({
                                     userToken={selectedOption}
                                     filters="breadcrumbs.lvl0:boys"
                                     enablePersonalization={true}
+                                />
+                                <CustomFilters
+                                    filterAnim={filterAnim}
+                                    isDynamicFactesOn={isDynamicFactesOn}
+                                    setIsDynamicFactesOn={setIsDynamicFactesOn}
+                                />
+                                <CustomHits
+                                    setModal={setModal}
+                                    setProduct={setProduct}
+                                    setShowFederatedSearch={
+                                        setShowFederatedSearch
+                                    }
+                                    setSearchVisible={setSearchVisible}
+                                />
+                            </div>
+                        ) : (
+                            // <div className="searchPanel-results">
+                            //     <Configure userToken={selectedOption} enablePersonalization={true} />
+                            //     <FilterBtn filterAnim={filterAnim} setFilterAnim={setFilterAnim} />
+                            //     <CustomFilters filterAnim={filterAnim} />
+                            //     <CustomHits setProduct={setProduct} setModal={setModal} />
+                            // </div>
+                            ''
+                        )}
+                        {sale ? (
+                            <div className="searchPanel-results">
+                                <FilterBtn
+                                    filterAnim={filterAnim}
+                                    setFilterAnim={setFilterAnim}
+                                />
+                                <Configure
+                                    userToken={selectedOption}
+                                    enablePersonalization={true}
+                                    ruleContexts={'sale'}
                                 />
                                 <CustomFilters
                                     filterAnim={filterAnim}

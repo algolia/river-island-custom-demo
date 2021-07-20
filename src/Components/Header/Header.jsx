@@ -11,6 +11,7 @@ const Header = ({
     setMen,
     setGirls,
     setBoys,
+    setSale,
     showFederatedSearch,
     setShowFederatedSearch
 }) => {
@@ -30,6 +31,7 @@ const Header = ({
                         setMen(false);
                         setGirls(false);
                         setBoys(false);
+                        setSale(false);
                     }}
                 >
                     <path d="M107.4 17.1c2.4 0 4.1-0.3 5.5-1.1 1.8-1.1 2.6-3 2.6-5.4 0-2.6-0.9-4.2-2.4-5.2 -1.3-0.9-3.1-1.3-5.8-1.3h-3.1v30.6h-5.3V0.7h9.3c3.5 0 6.4 0.4 8.9 1.9 3.8 2.5 3.9 6.4 3.9 7.3 0 4.2-2.3 7.4-6.4 8.8 -0.4 0.1-0.8 0.2-1.2 0.3l10.9 15.5h-6l-12-17.5H107.4z"></path>
@@ -52,6 +54,7 @@ const Header = ({
                             setMen(false);
                             setGirls(false);
                             setBoys(false);
+                            setSale(false);
                             setShowFederatedSearch(false);
                         }}
                     >
@@ -63,6 +66,7 @@ const Header = ({
                             setWomen(false);
                             setGirls(false);
                             setBoys(false);
+                            setSale(false);
                             setSearchVisible(false);
                             setShowFederatedSearch(false);
                         }}
@@ -75,6 +79,7 @@ const Header = ({
                             setWomen(false);
                             setGirls(true);
                             setBoys(false);
+                            setSale(false);
                             setSearchVisible(false);
                             setShowFederatedSearch(false);
                         }}
@@ -87,13 +92,26 @@ const Header = ({
                             setWomen(false);
                             setGirls(true);
                             setBoys(true);
+                            setSale(false);
                             setSearchVisible(false);
                             setShowFederatedSearch(false);
                         }}
                     >
                         Boys
                     </li>
-                    <li>Sale</li>
+                    <li
+                        onClick={() => {
+                            setMen(false);
+                            setWomen(false);
+                            setGirls(false);
+                            setBoys(false);
+                            setSale(true);
+                            setSearchVisible(false);
+                            setShowFederatedSearch(false);
+                        }}
+                    >
+                        Sale
+                    </li>
                     <li>Summer Shop</li>
                     <li>Editorial</li>
                     <li>
