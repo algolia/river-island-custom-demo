@@ -233,6 +233,9 @@ const FrameShapeRefinementList = ({ items, refine }) => {
                         <button
                             className="button-filter"
                             href="#"
+                            style={{
+                                border: item.isRefined ? '1px solid black' : ''
+                            }}
                             onClick={event => {
                                 event.preventDefault();
                                 refine(item.value);
@@ -276,6 +279,9 @@ const GenderRefinementList = ({ items, refine }) => {
                         <button
                             className="button-filter"
                             href="#"
+                            style={{
+                                border: item.isRefined ? '1px solid black' : ''
+                            }}
                             onClick={event => {
                                 event.preventDefault();
                                 refine(item.value);
@@ -317,6 +323,9 @@ const CategoriesRefinementList = ({ items, refine }) => {
                         <button
                             className="button-filter"
                             href="#"
+                            style={{
+                                border: item.isRefined ? '1px solid black' : ''
+                            }}
                             onClick={event => {
                                 event.preventDefault();
                                 refine(item.value);
