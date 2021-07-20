@@ -88,7 +88,7 @@ const SearchResults = ({
                             <CustomSuggestions
                                 setQuery={setQuery}
                                 query={query}
-                                attribute="title"
+                                attribute="name"
                             />
                         </Index>
                         <Banner />

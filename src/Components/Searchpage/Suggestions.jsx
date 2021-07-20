@@ -6,12 +6,12 @@ const Suggestions = ({ hits, setQuery, refine }) => {
         <div className="suggestions-container">
             {hits.slice(0, 9).map(hit => (
                 <div
-                    key={hit.title}
+                    key={hit.name}
                     className="suggestion"
                     onClick={e => setQuery(e.target.innerText)}
                 >
-                    {/* <Highlight hit={hit} attribute="title" /> */}
-                    <p>{hit.title}</p>
+                    {/* <Highlight hit={hit} attribute="name" /> */}
+                    <p>{hit.name}</p>
                 </div>
             ))}
         </div>
