@@ -39,7 +39,7 @@ const SearchBox = ({
 
                     />
                 </form>
-                <VoiceSearch searchAsYouSpeak={false} language={'en-US'} />
+                {/* <VoiceSearch searchAsYouSpeak={false} language={'en-US'} /> */}
             </div>
             {/* <CustomCurrentRefinements
                 transformItems={items =>

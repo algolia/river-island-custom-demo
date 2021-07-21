@@ -106,6 +106,7 @@ const SearchResults = ({
                                 />
                                 <Configure
                                     filters="breadcrumbs.lvl0:women"
+                                    hitsPerPage={20}
                                     enablePersonalization={true}
                                 />
                                 <CustomFilters
