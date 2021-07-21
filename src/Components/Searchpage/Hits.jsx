@@ -1,6 +1,12 @@
 import React from 'react';
 
-import { Highlight, SortBy, Stats, connectHits } from 'react-instantsearch-dom';
+import {
+    Highlight,
+    SortBy,
+    Stats,
+    connectHits,
+    Configure
+} from 'react-instantsearch-dom';
 
 // MAIN SEARCH RESULT PAGE + FEDERATED
 const Hits = ({
@@ -64,6 +70,50 @@ const Hits = ({
     );
 };
 
+const HitsFederated = ({
+    hits,
+    setProduct,
+    setModal,
+    setShowFederatedSearch,
+    setSearchVisible
+}) => {
+    return (
+        <div className="hits-wrapper">
+            <div className="sort-and-stat">
+                <Stats />
+            </div>
+            <ul className="hits-list">
+                {hits.map(hit => (
+                    <li
+                        key={hit.objectID}
+                        className="hit-list"
+                        onClick={() => {
+                            setProduct(hit);
+                            setModal(true);
+                            setShowFederatedSearch(false);
+                            setSearchVisible(true);
+                        }}
+                    >
+                        <div className="image-wrapper">
+                            <img src={hit.images[0].url} alt="" />
+                        </div>
+                        <div className="infos">
+                            <h3>
+                                <Highlight
+                                    hit={hit}
+                                    attribute="name"
+                                    className="title-hit"
+                                />
+                            </h3>
+                            <p>$ {hit.homeCost}</p>
+                        </div>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
+};
+
 // PDP
 const HitsModal = ({ hits }) => {
     return (
@@ -93,5 +143,7 @@ const HitsModal = ({ hits }) => {
 
 const CustomHits = connectHits(Hits);
 const CustomHitsModal = connectHits(HitsModal);
+const CustomHitsFederated = connectHits(HitsFederated);
 
-export { CustomHits, CustomHitsModal };
+
+export { CustomHits, CustomHitsModal, CustomHitsFederated };

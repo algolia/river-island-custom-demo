@@ -1,5 +1,5 @@
 import React from 'react';
-import { connectHits } from 'react-instantsearch-dom';
+import { connectHits, Highlight } from 'react-instantsearch-dom';
 
 const Suggestions = ({ hits, setQuery, refine }) => {
     return (
@@ -8,9 +8,11 @@ const Suggestions = ({ hits, setQuery, refine }) => {
                 <div
                     key={hit.name}
                     className="suggestion"
-                    onClick={e => setQuery(e.target.innerText)}
+                    onClick={e => {
+                        setQuery(e.target.innerText);
+                    }}
                 >
-                    {/* <Highlight hit={hit} attribute="name" /> */}
+                    <Highlight hit={hit} attribute="name" />
                     <p>{hit.name}</p>
                 </div>
             ))}

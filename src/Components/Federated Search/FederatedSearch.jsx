@@ -4,7 +4,7 @@ import React from 'react';
 import { Configure } from 'react-instantsearch-dom';
 
 // COMPONENT IMPORT
-import { CustomHits } from '../Searchpage/Hits';
+import { CustomHitsFederated } from '../Searchpage/Hits';
 import CustomSuggestions from '../Searchpage/Suggestions';
 // import {HierarchicalMenu, CatRefinementLists, CustomFilters, CustomCateRefinementList} from '../Searchage/Filters'
 import CustomSearchBox from '../Searchpage/SearchBox';
@@ -45,8 +45,8 @@ const FederatedSearch = ({
                         setSearchVisible={setSearchVisible}
                     />
                     <h3 className="federated-title">Products</h3>
-                    <Configure hitsPerPage={20} />
-                    <CustomHits
+                    <Configure hitsPerPage={9} />
+                    <CustomHitsFederated
                         setProduct={setProduct}
                         setModal={setModal}
                         setShowFederatedSearch={setShowFederatedSearch}

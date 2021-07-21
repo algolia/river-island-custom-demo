@@ -28,7 +28,9 @@ const SearchResults = ({
     boys,
     sale,
     showFederatedSearch,
-    setShowFederatedSearch
+    setShowFederatedSearch,
+    setInputValue, 
+    inputValue
 }) => {
     const searchClient = algoliasearch(window.appID, window.key);
     const [filterAnim, setFilterAnim] = useState(true);
@@ -79,6 +81,8 @@ const SearchResults = ({
                     <div></div>
                     <div className="search-panel">
                         <CustomSearchBox
+                            inputValue={inputValue}
+                            setInputValue={setInputValue}
                             query={query}
                             setQuery={setQuery}
                             searchVisible={searchVisible}
@@ -90,11 +94,11 @@ const SearchResults = ({
                             indexName={window.indexSugg}
                             indexId="suggestions"
                         >
-                            <CustomSuggestions
+                            {/* <CustomSuggestions
                                 setQuery={setQuery}
                                 query={query}
                                 attribute="name"
-                            />
+                            /> */}
                         </Index>
                         <Banner />
 
@@ -106,6 +110,7 @@ const SearchResults = ({
                                 />
                                 <Configure
                                     filters="breadcrumbs.lvl0:women"
+                                    hitsPerPage={20}
                                     enablePersonalization={true}
                                 />
                                 <CustomFilters
