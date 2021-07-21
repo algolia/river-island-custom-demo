@@ -15,6 +15,11 @@ const Header = ({
     showFederatedSearch,
     setShowFederatedSearch
 }) => {
+    const focus = () => {
+        const input = document.querySelector('#input-search2');
+        console.log('INPUT', input);
+        input.focus();
+    };
     return (
         <header className="header">
             <img src={headerUp} alt="" className="headerUp" />
@@ -125,6 +130,7 @@ const Header = ({
                         setMen(false);
                         setWomen(false);
                         setGirls(false);
+                        setTimeout(focus, 500);
                     }}
                 >
                     <p className="search-placeholder">Search</p>

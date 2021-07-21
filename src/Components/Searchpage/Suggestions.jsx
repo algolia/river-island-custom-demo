@@ -8,7 +8,9 @@ const Suggestions = ({ hits, setQuery, refine }) => {
                 <div
                     key={hit.name}
                     className="suggestion"
-                    onClick={e => setQuery(e.target.innerText)}
+                    onClick={e => {
+                        setQuery(e.target.innerText);
+                    }}
                 >
                     <Highlight hit={hit} attribute="name" />
                     <p>{hit.name}</p>

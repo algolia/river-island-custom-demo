@@ -1,10 +1,9 @@
-import React from 'react';
-
+import React, { useRef } from 'react';
 
 // ALGOLIA'S IMPORT
 import {
-    connectSearchBox,
-    VoiceSearch,
+    connectSearchBox
+    // VoiceSearch
     // connectCurrentRefinements
 } from 'react-instantsearch-dom';
 
@@ -18,36 +17,76 @@ const SearchBox = ({
     setSearchVisible,
     query
 }) => {
-    return (
-        <div>
-            <div className="searchBox-wrapper">
-                <form action="" role="search"
-                    onSubmit={(e) => {
-                        e.preventDefault()
-                        setShowFederatedSearch(false)
-                        setSearchVisible(true)
-                        setQuery(e.currentTarget.value)
-                    }}>
-                    <input
-                        type="search"
-                        value={query}
-                        onChange={event => {
-                            setQuery(event.currentTarget.value)
-                            refine(event.currentTarget.value)
+    if (query === '') {
+        return (
+            <div>
+                <div className="searchBox-wrapper">
+                    <form
+                        action=""
+                        role="search"
+                        onSubmit={e => {
+                            e.preventDefault();
+                            setShowFederatedSearch(false);
+                            setSearchVisible(true);
+                            setQuery(e.currentTarget.value);
                         }}
-                        placeholder="Search..."
-
-                    />
-                </form>
-                {/* <VoiceSearch searchAsYouSpeak={false} language={'en-US'} /> */}
+                    >
+                        <input
+                            id="input-search2"
+                            type="search"
+                            value={query}
+                            onChange={event => {
+                                setQuery(event.currentTarget.value);
+                                refine(event.currentTarget.value);
+                            }}
+                            placeholder="Search..."
+                        />
+                    </form>
+                    {/* <VoiceSearch searchAsYouSpeak={false} language={'en-US'} /> */}
+                </div>
+                {/* <CustomCurrentRefinements
+                    transformItems={items =>
+                        items.filter(item => item.attribute !== 'price')
+                    }
+                /> */}
             </div>
-            {/* <CustomCurrentRefinements
-                transformItems={items =>
-                    items.filter(item => item.attribute !== 'price')
-                }
-            /> */}
-        </div>
-    );
+        );
+    } else {
+        refine(query);
+        return (
+            <div>
+                <div className="searchBox-wrapper">
+                    <form
+                        action=""
+                        role="search"
+                        onSubmit={e => {
+                            e.preventDefault();
+                            setShowFederatedSearch(false);
+                            setSearchVisible(true);
+                            setQuery(e.currentTarget.value);
+                        }}
+                    >
+                        <input
+                            id="input-search2"
+                            type="search"
+                            value={query}
+                            onChange={event => {
+                                setQuery(event.currentTarget.value);
+                                refine(event.currentTarget.value);
+                            }}
+                            placeholder="Search..."
+                        />
+                    </form>
+                    {/* <VoiceSearch searchAsYouSpeak={false} language={'en-US'} /> */}
+                </div>
+                {/* <CustomCurrentRefinements
+                        transformItems={items =>
+                            items.filter(item => item.attribute !== 'price')
+                        }
+                    /> */}
+            </div>
+        );
+    }
 };
 
 // const CurrentRefinements = ({ items, refine }) => {
