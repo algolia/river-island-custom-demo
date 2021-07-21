@@ -32,8 +32,10 @@ const FederatedSearch = ({
             <CustomCateRefinementList attribute='color'/> 
         </div> */}
                 <div className="federatedSearch-suggestions">
-                    <h3>Suggestions</h3>
-                    <CustomSuggestions query={query} setQuery={setQuery} />
+                    <div className="suggestions-content">
+                        <h3>Suggestions</h3>
+                        <CustomSuggestions query={query} setQuery={setQuery} />
+                    </div>
                 </div>
                 <div className="federatedSearch-products">
                     <CustomSearchBox
@@ -45,7 +47,7 @@ const FederatedSearch = ({
                         setSearchVisible={setSearchVisible}
                     />
                     <h3 className="federated-title">Products</h3>
-                    <Configure hitsPerPage={9} />
+                    <Configure hitsPerPage={6} />
                     <CustomHitsFederated
                         setProduct={setProduct}
                         setModal={setModal}

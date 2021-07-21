@@ -13,7 +13,7 @@ const Suggestions = ({ hits, setQuery, refine }) => {
                     }}
                 >
                     <Highlight hit={hit} attribute="name" />
-                    <p>{hit.name}</p>
+                    {/* <p>{hit.name}</p> */}
                 </div>
             ))}
         </div>

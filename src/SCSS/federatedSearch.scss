@@ -1,5 +1,5 @@
-@import "./variables.scss";
-@import "./mixin.scss";
+@import './variables.scss';
+@import './mixin.scss';
 
 .federatedSearch-wrapper {
     display: grid;
@@ -48,6 +48,10 @@
                 font-size: 1.2rem;
             }
         }
+    }
+    .suggestions-content{
+        position: sticky;
+        top: 3rem;
     }
 }
 
