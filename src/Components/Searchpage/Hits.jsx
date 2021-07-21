@@ -1,6 +1,12 @@
 import React from 'react';
 
-import { Highlight, SortBy, Stats, connectHits } from 'react-instantsearch-dom';
+import {
+    Highlight,
+    SortBy,
+    Stats,
+    connectHits,
+    Configure
+} from 'react-instantsearch-dom';
 
 // MAIN SEARCH RESULT PAGE + FEDERATED
 const Hits = ({
@@ -68,6 +74,12 @@ const Hits = ({
 const HitsModal = ({ hits }) => {
     return (
         <div className="hits-wrapper">
+            <Configure
+                hitsPerPage={9}
+                analytics={false}
+                enablePersonalization={true}
+                distinct
+            />
             <ul className="hits-list hits-list-modal">
                 {hits.map(hit => (
                     <li key={hit.objectID} className="hit-list">
