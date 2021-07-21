@@ -28,13 +28,13 @@ const ProductDetails = ({ product, setModal }) => {
                 <div className="modal-detail">
                     <div className="product-side">
                         <div className="modal-images">
-                            <img src={product.image_link} alt="" />
+                            <img src={product.images[0].url} alt="" />
                         </div>
                     </div>
                     <div className="fake-filters">
                         <div className="modal-infos">
                             <h3>{product.title}</h3>
-                            <p>${product.price}</p>
+                            <p>${product.homeCost}</p>
                             <p>{product.description}</p>
                             <p className="btn-modal">Buy me</p>
                         </div>
