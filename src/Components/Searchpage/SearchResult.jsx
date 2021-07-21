@@ -15,7 +15,7 @@ import { CustomFilters } from './Filters';
 import CustomSearchBox from './SearchBox';
 import ProductDetails from '../ProductsDetails/ProductsDetails';
 import Banner from './banner';
-import CustomSuggestions from './Suggestions';
+// import CustomSuggestions from './Suggestions';
 import FederatedSearch from '../Federated Search/FederatedSearch';
 
 const SearchResults = ({

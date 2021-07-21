@@ -5,7 +5,6 @@ import {
     SortBy,
     Stats,
     connectHits,
-    Configure
 } from 'react-instantsearch-dom';
 
 // MAIN SEARCH RESULT PAGE + FEDERATED
