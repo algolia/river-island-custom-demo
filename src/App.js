@@ -55,7 +55,6 @@ const App = () => {
                     boys={boys}
                     sale={sale}
                     query={query}
-                    setQuery={setQuery}
                     setShowFederatedSearch={setShowFederatedSearch}
                     showFederatedSearch={showFederatedSearch}
                 />
