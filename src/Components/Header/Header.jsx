@@ -40,7 +40,7 @@ const Header = ({
                         setGirls(false);
                         setBoys(false);
                         setSale(false);
-                        setQuery(null);
+                        setQuery('');
                         setShowFederatedSearch(false);
                     }}
                 >
