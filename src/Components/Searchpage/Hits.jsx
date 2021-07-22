@@ -71,36 +71,42 @@ const HitsFederated = ({
     setShowFederatedSearch,
     setSearchVisible
 }) => {
+    console.log('HITS', hits);
     return (
         <div className="hits-wrapper">
             <div className="sort-and-stat">{/* <Stats /> */}</div>
             <ul className="hits-list">
-                {hits.map(hit => (
-                    <li
-                        key={hit.objectID}
-                        className="hit-list"
-                        onClick={() => {
-                            setProduct(hit);
-                            setModal(true);
-                            setShowFederatedSearch(false);
-                            setSearchVisible(true);
-                        }}
-                    >
-                        <div className="image-wrapper">
-                            <img src={hit.images[0].url} alt="" />
-                        </div>
-                        <div className="infos">
-                            <h3>
-                                <Highlight
-                                    hit={hit}
-                                    attribute="name"
-                                    className="title-hit"
-                                />
-                            </h3>
-                            <p>$ {hit.homeCost}</p>
-                        </div>
-                    </li>
-                ))}
+                {hits.map(hit => {
+                    console.log(typeof hit._rankingInfo.promoted);
+                    return (
+                        <li
+                            className={`hit-list ${
+                                hit._rankingInfo.promoted ? 'promoted' : 'test'
+                            }`}
+                            key={hit.objectID}
+                            onClick={() => {
+                                setProduct(hit);
+                                setModal(true);
+                                setShowFederatedSearch(false);
+                                setSearchVisible(true);
+                            }}
+                        >
+                            <div className="image-wrapper">
+                                <img src={hit.images[0].url} alt="" />
+                            </div>
+                            <div className="infos">
+                                <h3>
+                                    <Highlight
+                                        hit={hit}
+                                        attribute="name"
+                                        className="title-hit"
+                                    />
+                                </h3>
+                                <p>$ {hit.homeCost}</p>
+                            </div>
+                        </li>
+                    );
+                })}
             </ul>
         </div>
     );

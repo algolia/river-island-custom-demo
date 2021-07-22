@@ -107,6 +107,7 @@ const SearchResults = ({
                             <Configure
                                 filters="breadcrumbs.lvl0:women"
                                 hitsPerPage={20}
+                                getRankingInfo={true}
                                 enablePersonalization={true}
                             />
                             <CustomFilters
@@ -138,6 +139,7 @@ const SearchResults = ({
                             />
                             <Configure
                                 userToken={selectedOption}
+                                getRankingInfo={true}
                                 filters="breadcrumbs.lvl0:men"
                                 enablePersonalization={true}
                             />
@@ -166,6 +168,7 @@ const SearchResults = ({
                         <div className="searchPanel-results">
                             <FilterBtn
                                 filterAnim={filterAnim}
+                                getRankingInfo={true}
                                 setFilterAnim={setFilterAnim}
                             />
                             <Configure
@@ -202,6 +205,7 @@ const SearchResults = ({
                             />
                             <Configure
                                 userToken={selectedOption}
+                                getRankingInfo={true}
                                 filters="breadcrumbs.lvl0:boys"
                                 enablePersonalization={true}
                             />
@@ -236,6 +240,7 @@ const SearchResults = ({
                                 userToken={selectedOption}
                                 enablePersonalization={true}
                                 ruleContexts={'sale'}
+                                getRankingInfo={true}
                             />
                             <CustomFilters
                                 filterAnim={filterAnim}
