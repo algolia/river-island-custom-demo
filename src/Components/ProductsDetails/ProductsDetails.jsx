@@ -4,27 +4,26 @@ import algoliasearch from 'algoliasearch/lite';
 import { Configure, InstantSearch } from 'react-instantsearch-dom';
 
 // IMPORT COMPONENTS
-import { CustomHitsModal } from '../Searchpage/Hits'
+import { CustomHitsModal } from '../Searchpage/Hits';
 
 // IMPORT ASSETS
-import pdp from '../../Assets/Images/pdp.png'
-
-
+import pdp from '../../Assets/Images/pdp.png';
 
 const ProductDetails = ({ product, setModal }) => {
-    const searchClient = algoliasearch(
-        window.appID,
-        window.key
-    );
+    const searchClient = algoliasearch(window.appID, window.key);
 
     if (product) {
-        setModal(true)
+        setModal(true);
         return (
             <div className="modal-inner-wrapper">
-                <p className="close-modal" onClick={() => {
-                    setModal(false)
-                }
-                }>X</p>
+                <p
+                    className="close-modal"
+                    onClick={() => {
+                        setModal(false);
+                    }}
+                >
+                    X
+                </p>
                 <div className="modal-detail">
                     <div className="product-side">
                         <div className="modal-images">
@@ -42,24 +41,27 @@ const ProductDetails = ({ product, setModal }) => {
                     </div>
                 </div>
                 <div className="recommand-side">
-                    <div><h3>Recommandations</h3></div>
+                    <div>
+                        <h3>Recommandations</h3>
+                    </div>
                     <div className="modal-hits">
-                        <Configure hitsPerPage={8} />
+                        <Configure filters="breadcrumbs.lvl0:men" hitsPerPage={8} />
                         <CustomHitsModal />
                     </div>
-                    <div><h3>Bought together</h3></div>
+                    <div>
+                        <h3>Bought together</h3>
+                    </div>
                     <div className="modal-hits">
-                        <InstantSearch
-                            indexName={window.index_asc}
-                            searchClient={searchClient}>
-                            <Configure hitsPerPage={8} />
-                            <CustomHitsModal />
-                        </InstantSearch>
+                        <Configure
+                            hitsPerPage={8}
+                            filters="breadcrumbs.lvl0:girls"
+                        />
+                        <CustomHitsModal />
                     </div>
                 </div>
             </div>
         );
     }
-}
+};
 
 export default ProductDetails;

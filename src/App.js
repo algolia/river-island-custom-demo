@@ -8,6 +8,8 @@ import './SCSS/index.scss';
 import Header from './Components/Header/Header';
 import SearchResults from './Components/Searchpage/SearchResult';
 import Homepage from './Components/Homepage/Homepage';
+import { InstantSearch } from 'react-instantsearch-dom';
+import algoliasearch from 'algoliasearch/lite';
 
 const App = () => {
     const [searchVisible, setSearchVisible] = useState(false);
@@ -19,40 +21,50 @@ const App = () => {
     const [selectedOption, setSelectedOption] = useState(null);
     const [query, setQuery] = useState('');
     const [showFederatedSearch, setShowFederatedSearch] = useState(false);
+    const searchClient = algoliasearch(window.appID, window.key);
     return (
         <div>
-            <Header
-                setSelectedOption={setSelectedOption}
-                searchVisible={searchVisible}
-                setSearchVisible={setSearchVisible}
-                women={women}
-                setWomen={setWomen}
-                men={men}
-                setMen={setMen}
-                girls={girls}
-                boys={boys}
-                setBoys={setBoys}
-                setGirls={setGirls}
-                sale={sale}
-                setSale={setSale}
-                setShowFederatedSearch={setShowFederatedSearch}
-                showFederatedSearch={showFederatedSearch}
-            />
-            <SearchResults
-                selectedOption={selectedOption}
-                searchVisible={searchVisible}
-                setSearchVisible={setSearchVisible}
-                women={women}
-                men={men}
-                girls={girls}
-                boys={boys}
-                sale={sale}
-                query={query}
-                setQuery={setQuery}
-                setShowFederatedSearch={setShowFederatedSearch}
-                showFederatedSearch={showFederatedSearch}
-            />
-            <Homepage searchVisible={searchVisible} women={women} men={men} />
+            <InstantSearch searchClient={searchClient} indexName={window.index}>
+                <Header
+                    setQuery={setQuery}
+                    query={query}
+                    setSelectedOption={setSelectedOption}
+                    searchVisible={searchVisible}
+                    setSearchVisible={setSearchVisible}
+                    women={women}
+                    setWomen={setWomen}
+                    men={men}
+                    setMen={setMen}
+                    girls={girls}
+                    boys={boys}
+                    setBoys={setBoys}
+                    setGirls={setGirls}
+                    sale={sale}
+                    setSale={setSale}
+                    setShowFederatedSearch={setShowFederatedSearch}
+                    showFederatedSearch={showFederatedSearch}
+                />
+                <SearchResults
+                    setQuery={setQuery}
+                    selectedOption={selectedOption}
+                    searchVisible={searchVisible}
+                    setSearchVisible={setSearchVisible}
+                    women={women}
+                    men={men}
+                    girls={girls}
+                    boys={boys}
+                    sale={sale}
+                    query={query}
+                    setQuery={setQuery}
+                    setShowFederatedSearch={setShowFederatedSearch}
+                    showFederatedSearch={showFederatedSearch}
+                />
+                <Homepage
+                    searchVisible={searchVisible}
+                    women={women}
+                    men={men}
+                />
+            </InstantSearch>
         </div>
     );
 };

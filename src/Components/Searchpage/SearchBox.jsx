@@ -28,15 +28,15 @@ const SearchBox = ({
                             e.preventDefault();
                             setShowFederatedSearch(false);
                             setSearchVisible(true);
-                            setQuery(e.currentTarget.value);
+                            // setQuery(e.currentTarget.value);
                         }}
                     >
                         <input
                             id="input-search2"
                             type="search"
-                            value={query}
                             onChange={event => {
-                                setQuery(event.currentTarget.value);
+                                // setQuery(event.currentTarget.value);
+                                setShowFederatedSearch(true);
                                 refine(event.currentTarget.value);
                             }}
                             placeholder="Search..."
@@ -63,7 +63,7 @@ const SearchBox = ({
                             e.preventDefault();
                             setShowFederatedSearch(false);
                             setSearchVisible(true);
-                            setQuery(e.currentTarget.value);
+                            // setQuery(e.currentTarget.value);
                         }}
                     >
                         <input
@@ -71,7 +71,8 @@ const SearchBox = ({
                             type="search"
                             value={query}
                             onChange={event => {
-                                setQuery(event.currentTarget.value);
+                                // setQuery(event.currentTarget.value);
+                                setShowFederatedSearch(true);
                                 refine(event.currentTarget.value);
                             }}
                             placeholder="Search..."
@@ -80,14 +81,56 @@ const SearchBox = ({
                     {/* <VoiceSearch searchAsYouSpeak={false} language={'en-US'} /> */}
                 </div>
                 {/* <CustomCurrentRefinements
-                        transformItems={items =>
-                            items.filter(item => item.attribute !== 'price')
-                        }
-                    /> */}
+                    transformItems={items =>
+                        items.filter(item => item.attribute !== 'price')
+                    }
+                /> */}
             </div>
         );
     }
 };
+// else {
+//     refine(query);
+//     return (
+//         <div>
+//             <div className="searchBox-wrapper">
+//                 <form
+//                     action=""
+//                     role="search"
+//                     onSubmit={e => {
+//                         e.preventDefault();
+//                         setShowFederatedSearch(false);
+//                         setSearchVisible(true);
+//                         setQuery(e.currentTarget.value);
+//                     }}
+//                 >
+//                     <input
+//                         id="input-search2"
+//                         type="search"
+//                         value={query}
+//                         onChange={event => {
+//                             // setQuery(event.currentTarget.value);
+//                             console.log(
+//                                 'Event2',
+//                                 event.currentTarget.value
+//                             );
+//                             console.log('Query', query);
+//                             setShowFederatedSearch(true);
+//                             refine(event.currentTarget.value);
+//                         }}
+//                         placeholder="Search..."
+//                     />
+//                 </form>
+//                 {/* <VoiceSearch searchAsYouSpeak={false} language={'en-US'} /> */}
+//             </div>
+//             {/* <CustomCurrentRefinements
+//                     transformItems={items =>
+//                         items.filter(item => item.attribute !== 'price')
+//                     }
+//                 /> */}
+//         </div>
+//     );
+// }
 
 // const CurrentRefinements = ({ items, refine }) => {
 //     const unique = uniqBy(items, 'currentRefinement');

@@ -1,11 +1,6 @@
 import React from 'react';
 
-import {
-    Highlight,
-    SortBy,
-    Stats,
-    connectHits,
-} from 'react-instantsearch-dom';
+import { Highlight, SortBy, Stats, connectHits } from 'react-instantsearch-dom';
 
 // MAIN SEARCH RESULT PAGE + FEDERATED
 const Hits = ({
@@ -78,9 +73,7 @@ const HitsFederated = ({
 }) => {
     return (
         <div className="hits-wrapper">
-            <div className="sort-and-stat">
-                {/* <Stats /> */}
-            </div>
+            <div className="sort-and-stat">{/* <Stats /> */}</div>
             <ul className="hits-list">
                 {hits.map(hit => (
                     <li
@@ -143,6 +136,5 @@ const HitsModal = ({ hits }) => {
 const CustomHits = connectHits(Hits);
 const CustomHitsModal = connectHits(HitsModal);
 const CustomHitsFederated = connectHits(HitsFederated);
-
 
 export { CustomHits, CustomHitsModal, CustomHitsFederated };
