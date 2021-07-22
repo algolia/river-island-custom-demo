@@ -17,89 +17,83 @@ const SearchBox = ({
     setSearchVisible,
     query
 }) => {
-        return (
-            <div>
-                <div className="searchBox-wrapper">
-                    <form
-                        action=""
-                        role="search"
-                        onSubmit={e => {
-                            e.preventDefault();
-                            console.log('Event', e.currentTarget.value);
-                            setShowFederatedSearch(false);
-                            setSearchVisible(true);
-                            // setQuery(e.currentTarget.value);
+    return (
+        <div>
+            <div className="searchBox-wrapper">
+                <form
+                    action=""
+                    role="search"
+                    onSubmit={e => {
+                        e.preventDefault();
+                        setShowFederatedSearch(false);
+                        setSearchVisible(true);
+                        // setQuery(e.currentTarget.value);
+                    }}
+                >
+                    <input
+                        id="input-search2"
+                        type="search"
+                        value={query}
+                        onChange={event => {
+                            // setQuery(event.currentTarget.value);
+                            setShowFederatedSearch(true);
+                            refine(event.currentTarget.value);
                         }}
-                    >
-                        <input
-                            id="input-search2"
-                            type="search"
-                            value={query}
-                            onChange={event => {
-                                // setQuery(event.currentTarget.value);
-                                console.log(
-                                    'Event1',
-                                    event.currentTarget.value
-                                );
-                                setShowFederatedSearch(true);
-                                refine(event.currentTarget.value);
-                            }}
-                            placeholder="Search..."
-                        />
-                    </form>
-                    {/* <VoiceSearch searchAsYouSpeak={false} language={'en-US'} /> */}
-                </div>
-                {/* <CustomCurrentRefinements
+                        placeholder="Search..."
+                    />
+                </form>
+                {/* <VoiceSearch searchAsYouSpeak={false} language={'en-US'} /> */}
+            </div>
+            {/* <CustomCurrentRefinements
                     transformItems={items =>
                         items.filter(item => item.attribute !== 'price')
                     }
                 /> */}
-            </div>
-        );
-    }
-    // else {
-    //     refine(query);
-    //     return (
-    //         <div>
-    //             <div className="searchBox-wrapper">
-    //                 <form
-    //                     action=""
-    //                     role="search"
-    //                     onSubmit={e => {
-    //                         e.preventDefault();
-    //                         setShowFederatedSearch(false);
-    //                         setSearchVisible(true);
-    //                         setQuery(e.currentTarget.value);
-    //                     }}
-    //                 >
-    //                     <input
-    //                         id="input-search2"
-    //                         type="search"
-    //                         value={query}
-    //                         onChange={event => {
-    //                             // setQuery(event.currentTarget.value);
-    //                             console.log(
-    //                                 'Event2',
-    //                                 event.currentTarget.value
-    //                             );
-    //                             console.log('Query', query);
-    //                             setShowFederatedSearch(true);
-    //                             refine(event.currentTarget.value);
-    //                         }}
-    //                         placeholder="Search..."
-    //                     />
-    //                 </form>
-    //                 {/* <VoiceSearch searchAsYouSpeak={false} language={'en-US'} /> */}
-    //             </div>
-    //             {/* <CustomCurrentRefinements
-    //                     transformItems={items =>
-    //                         items.filter(item => item.attribute !== 'price')
-    //                     }
-    //                 /> */}
-    //         </div>
-    //     );
-    // }
-
+        </div>
+    );
+};
+// else {
+//     refine(query);
+//     return (
+//         <div>
+//             <div className="searchBox-wrapper">
+//                 <form
+//                     action=""
+//                     role="search"
+//                     onSubmit={e => {
+//                         e.preventDefault();
+//                         setShowFederatedSearch(false);
+//                         setSearchVisible(true);
+//                         setQuery(e.currentTarget.value);
+//                     }}
+//                 >
+//                     <input
+//                         id="input-search2"
+//                         type="search"
+//                         value={query}
+//                         onChange={event => {
+//                             // setQuery(event.currentTarget.value);
+//                             console.log(
+//                                 'Event2',
+//                                 event.currentTarget.value
+//                             );
+//                             console.log('Query', query);
+//                             setShowFederatedSearch(true);
+//                             refine(event.currentTarget.value);
+//                         }}
+//                         placeholder="Search..."
+//                     />
+//                 </form>
+//                 {/* <VoiceSearch searchAsYouSpeak={false} language={'en-US'} /> */}
+//             </div>
+//             {/* <CustomCurrentRefinements
+//                     transformItems={items =>
+//                         items.filter(item => item.attribute !== 'price')
+//                     }
+//                 /> */}
+//         </div>
+//     );
+// }
 
 // const CurrentRefinements = ({ items, refine }) => {
 //     const unique = uniqBy(items, 'currentRefinement');

@@ -26,6 +26,7 @@ const App = () => {
         <div>
             <InstantSearch searchClient={searchClient} indexName={window.index}>
                 <Header
+                    query={query}
                     setSelectedOption={setSelectedOption}
                     searchVisible={searchVisible}
                     setSearchVisible={setSearchVisible}
@@ -43,6 +44,7 @@ const App = () => {
                     showFederatedSearch={showFederatedSearch}
                 />
                 <SearchResults
+                    setQuery={setQuery}
                     selectedOption={selectedOption}
                     searchVisible={searchVisible}
                     setSearchVisible={setSearchVisible}

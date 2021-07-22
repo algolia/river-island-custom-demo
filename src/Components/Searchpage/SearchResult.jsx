@@ -19,6 +19,8 @@ import Banner from './banner';
 import FederatedSearch from '../Federated Search/FederatedSearch';
 
 const SearchResults = ({
+    query,
+    setQuery,
     selectedOption,
     searchVisible,
     setSearchVisible,
@@ -36,7 +38,6 @@ const SearchResults = ({
     const [filterAnim, setFilterAnim] = useState(true);
     const [product, setProduct] = useState(null);
     const [modal, setModal] = useState(false);
-    const [query, setQuery] = useState('');
     const [isDynamicFactesOn, setIsDynamicFactesOn] = useState(false);
 
     return (
