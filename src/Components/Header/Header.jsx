@@ -19,10 +19,10 @@ const Header = ({
     setQuery,
     query
 }) => {
-    const focus = () => {
-        const input = document.querySelector('#input-search2');
-        input.focus();
-    };
+    // const focus = () => {
+    //     const input = document.querySelector('#input-search2');
+    //     input.focus();
+    // };
     return (
         <header className="header">
             <img src={headerUp} alt="" className="headerUp" />

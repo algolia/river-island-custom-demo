@@ -34,7 +34,7 @@ const SearchResults = ({
     setInputValue,
     inputValue
 }) => {
-    const searchClient = algoliasearch(window.appID, window.key);
+    // const searchClient = algoliasearch(window.appID, window.key);
     const [filterAnim, setFilterAnim] = useState(true);
     const [product, setProduct] = useState(null);
     const [modal, setModal] = useState(false);

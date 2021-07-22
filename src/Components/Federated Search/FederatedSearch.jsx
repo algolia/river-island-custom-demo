@@ -7,7 +7,6 @@ import { Configure } from 'react-instantsearch-dom';
 import { CustomHitsFederated } from '../Searchpage/Hits';
 import CustomSuggestions from '../Searchpage/Suggestions';
 // import {HierarchicalMenu, CatRefinementLists, CustomFilters, CustomCateRefinementList} from '../Searchage/Filters'
-import CustomSearchBox from '../Searchpage/SearchBox';
 
 const FederatedSearch = ({
     query,

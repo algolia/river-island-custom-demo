@@ -1,7 +1,7 @@
 import React from 'react';
 
 import algoliasearch from 'algoliasearch/lite';
-import { Configure, InstantSearch } from 'react-instantsearch-dom';
+import { Configure } from 'react-instantsearch-dom';
 
 // IMPORT COMPONENTS
 import { CustomHitsModal } from '../Searchpage/Hits';
@@ -10,7 +10,7 @@ import { CustomHitsModal } from '../Searchpage/Hits';
 import pdp from '../../Assets/Images/pdp.png';
 
 const ProductDetails = ({ product, setModal }) => {
-    const searchClient = algoliasearch(window.appID, window.key);
+    // const searchClient = algoliasearch(window.appID, window.key);
 
     if (product) {
         setModal(true);
