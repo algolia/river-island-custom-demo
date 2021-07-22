@@ -16,7 +16,12 @@ const FederatedSearch = ({
     searchVisible,
     setSearchVisible,
     setProduct,
-    setModal
+    setModal,
+    setWomen,
+    setMen,
+    setGirls,
+    setBoys,
+    setSale
 }) => {
     return (
         <div className="federatedSearch">
@@ -33,7 +38,17 @@ const FederatedSearch = ({
                 <div className="federatedSearch-suggestions">
                     <div className="suggestions-content">
                         <h3>Suggestions</h3>
-                        <CustomSuggestions query={query} setQuery={setQuery} />
+                        <CustomSuggestions
+                            query={query}
+                            setQuery={setQuery}
+                            setShowFederatedSearch={setShowFederatedSearch}
+                            setSearchVisible={setSearchVisible}
+                            setSale={setSale}
+                            setBoys={setBoys}
+                            setGirls={setGirls}
+                            setMen={setMen}
+                            setWomen={setWomen}
+                        />
                     </div>
                 </div>
                 <div className="federatedSearch-products">

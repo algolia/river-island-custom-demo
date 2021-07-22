@@ -65,7 +65,7 @@ const Header = ({
                             setGirls(false);
                             setBoys(false);
                             setSale(false);
-                            setQuery(null);
+                            setQuery('');
                             setShowFederatedSearch(false);
                         }}
                     >
@@ -78,7 +78,7 @@ const Header = ({
                             setGirls(false);
                             setBoys(false);
                             setSale(false);
-                            setQuery(null);
+                            setQuery('');
                             setSearchVisible(false);
                             setShowFederatedSearch(false);
                         }}
@@ -92,7 +92,7 @@ const Header = ({
                             setGirls(true);
                             setBoys(false);
                             setSale(false);
-                            setQuery(null);
+                            setQuery('');
                             setSearchVisible(false);
                             setShowFederatedSearch(false);
                         }}
@@ -103,10 +103,10 @@ const Header = ({
                         onClick={() => {
                             setMen(false);
                             setWomen(false);
-                            setGirls(true);
+                            setGirls(false);
                             setBoys(true);
                             setSale(false);
-                            setQuery(null);
+                            setQuery('');
                             setSearchVisible(false);
                             setShowFederatedSearch(false);
                         }}
@@ -120,7 +120,7 @@ const Header = ({
                             setGirls(false);
                             setBoys(false);
                             setSale(true);
-                            setQuery(null);
+                            setQuery('');
                             setSearchVisible(false);
                             setShowFederatedSearch(false);
                         }}
@@ -136,11 +136,12 @@ const Header = ({
                 <div
                     className="search-wrapper"
                     // onClick={() => {
-                    //     setShowFederatedSearch(!showFederatedSearch);
-                    //     setMen(false);
                     //     setWomen(false);
+                    //     setSearchVisible(true);
+                    //     setMen(false);
                     //     setGirls(false);
-                    //     setTimeout(focus, 500);
+                    //     setBoys(false);
+                    //     setSale(false);
                     // }}
                 >
                     <CustomSearchBox

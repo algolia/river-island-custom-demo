@@ -7,11 +7,11 @@ import img3 from '../../Assets/Images/img3.png';
 import img4 from '../../Assets/Images/img4.png';
 import footer from '../../Assets/Images/img5.png';
 
-const Homepage = ({ searchVisible, men, women }) => {
+const Homepage = ({ searchVisible, men, women, boys, sale, girls }) => {
     return (
         <div
             className={`homepage-wrapper ${
-                searchVisible || women || men ? 'hidden' : 'active'
+                searchVisible || women || men || boys || sale || girls ? 'hidden' : 'active'
             }`}
         >
             {/* <div>

@@ -20,6 +20,7 @@ const SearchBox = ({
 }) => {
     if (query === '') {
         console.log('IF', query);
+        refine('')
         return (
             <div>
                 <div className="searchBox-wrapper">

@@ -32,11 +32,17 @@ const Hits = ({
                     ]}
                 />
             </div>
-            <ul className="hits-list">
+            <ul
+                className={`hits-list ${
+                    hits.length < 3 ? 'hits-list-small' : ''
+                }`}
+            >
                 {hits.map(hit => (
                     <li
                         key={hit.objectID}
-                        className={`hit-list ${hit._rankingInfo.promoted ? 'promoted' : ''}`}
+                        className={`hit-list ${
+                            hit._rankingInfo.promoted ? 'promoted' : ''
+                        }`}
                         onClick={() => {
                             setProduct(hit);
                             setModal(true);
@@ -71,43 +77,51 @@ const HitsFederated = ({
     setShowFederatedSearch,
     setSearchVisible
 }) => {
-    console.log('HITS', hits);
-    return (
-        <div className="hits-wrapper">
-            <div className="sort-and-stat">{/* <Stats /> */}</div>
-            <ul className="hits-list">
-                {hits.map(hit => {
-                    return (
-                        <li
-                        className={`hit-list ${hit._rankingInfo.promoted ? 'promoted' : ''}`}
-                            key={hit.objectID}
-                            onClick={() => {
-                                setProduct(hit);
-                                setModal(true);
-                                setShowFederatedSearch(false);
-                                setSearchVisible(true);
-                            }}
-                            data="test"
-                        >
-                            <div className="image-wrapper">
-                                <img src={hit.images[0].url} alt="" />
-                            </div>
-                            <div className="infos">
-                                <h3>
-                                    <Highlight
-                                        hit={hit}
-                                        attribute="name"
-                                        className="title-hit"
-                                    />
-                                </h3>
-                                <p>$ {hit.homeCost}</p>
-                            </div>
-                        </li>
-                    );
-                })}
-            </ul>
-        </div>
-    );
+    if (hits) {
+        console.log('HITS', hits);
+        return (
+            <div className="hits-wrapper">
+                <div className="sort-and-stat">{/* <Stats /> */}</div>
+                <ul
+                    className={`hits-list ${
+                        hits.length < 3 ? 'hits-list-small' : ''
+                    }`}
+                >
+                    {hits.map(hit => {
+                        return (
+                            <li
+                                className={`hit-list ${
+                                    hit._rankingInfo.promoted ? 'promoted' : ''
+                                }`}
+                                key={hit.objectID}
+                                onClick={() => {
+                                    setProduct(hit);
+                                    setModal(true);
+                                    setShowFederatedSearch(false);
+                                    setSearchVisible(true);
+                                }}
+                                data="test"
+                            >
+                                <div className="image-wrapper">
+                                    <img src={hit.images[0].url} alt="" />
+                                </div>
+                                <div className="infos">
+                                    <h3>
+                                        <Highlight
+                                            hit={hit}
+                                            attribute="name"
+                                            className="title-hit"
+                                        />
+                                    </h3>
+                                    <p>$ {hit.homeCost}</p>
+                                </div>
+                            </li>
+                        );
+                    })}
+                </ul>
+            </div>
+        );
+    }
 };
 
 // PDP

@@ -1,7 +1,18 @@
 import React from 'react';
 import { connectHits, Highlight } from 'react-instantsearch-dom';
 
-const Suggestions = ({ hits, setQuery, refine }) => {
+const Suggestions = ({
+    hits,
+    setQuery,
+    refine,
+    setShowFederatedSearch,
+    setSearchVisible,
+    setWomen,
+    setMen,
+    setGirls,
+    setBoys,
+    setSale
+}) => {
     return (
         <div className="suggestions-container">
             {hits.slice(0, 9).map(hit => (
@@ -9,7 +20,15 @@ const Suggestions = ({ hits, setQuery, refine }) => {
                     key={hit.name}
                     className="suggestion"
                     onClick={e => {
-                        setQuery(e.target.innerText);
+                        setQuery(e.currentTarget.innerText);
+                        setShowFederatedSearch(false);
+                        setSearchVisible(true);
+                        setWomen(false);
+                        setSearchVisible(true);
+                        setMen(false);
+                        setGirls(false);
+                        setBoys(false);
+                        setSale(false);
                     }}
                 >
                     <Highlight hit={hit} attribute="name" />

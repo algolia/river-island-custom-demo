@@ -27,6 +27,11 @@ const SearchResults = ({
     girls,
     boys,
     sale,
+    setWomen,
+    setMen,
+    setGirls,
+    setBoys,
+    setSale,
     showFederatedSearch,
     setShowFederatedSearch,
     setInputValue,
@@ -54,6 +59,11 @@ const SearchResults = ({
                     setSearchVisible={setSearchVisible}
                     setProduct={setProduct}
                     setModal={setModal}
+                    setSale={setSale}
+                    setBoys={setBoys}
+                    setGirls={setGirls}
+                    setMen={setMen}
+                    setWomen={setWomen}
                 />
             </div>
             <div
@@ -175,6 +185,7 @@ const SearchResults = ({
                                 userToken={selectedOption}
                                 filters="breadcrumbs.lvl0:girls"
                                 enablePersonalization={true}
+                                getRankingInfo={true}
                             />
                             <CustomFilters
                                 filterAnim={filterAnim}
@@ -268,6 +279,7 @@ const SearchResults = ({
                             <Configure
                                 userToken={selectedOption}
                                 enablePersonalization={true}
+                                getRankingInfo={true}
                             />
                             <FilterBtn
                                 filterAnim={filterAnim}

@@ -54,6 +54,11 @@ const App = () => {
                     girls={girls}
                     boys={boys}
                     sale={sale}
+                    setSale={setSale}
+                    setBoys={setBoys}
+                    setGirls={setGirls}
+                    setMen={setMen}
+                    setWomen={setWomen}
                     query={query}
                     setShowFederatedSearch={setShowFederatedSearch}
                     showFederatedSearch={showFederatedSearch}
@@ -62,6 +67,9 @@ const App = () => {
                     searchVisible={searchVisible}
                     women={women}
                     men={men}
+                    girls={girls}
+                    boys={boys}
+                    sale={sale}
                 />
             </InstantSearch>
         </div>
