@@ -71,7 +71,7 @@ const HitsFederated = ({
     setShowFederatedSearch,
     setSearchVisible
 }) => {
-    console.log(hits)
+    console.log('HITSSSSSSZ',hits)
     return (
         <div className="hits-wrapper">
             <div className="sort-and-stat">{/* <Stats /> */}</div>
