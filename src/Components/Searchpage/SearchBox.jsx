@@ -13,11 +13,13 @@ import {
 const SearchBox = ({
     refine,
     setQuery,
+    currentRefinements,
     setShowFederatedSearch,
     setSearchVisible,
     query
 }) => {
     if (query === '') {
+        console.log('IF');
         return (
             <div>
                 <div className="searchBox-wrapper">
@@ -53,6 +55,7 @@ const SearchBox = ({
         );
     } else {
         refine(query);
+        console.log('ELSE');
         return (
             <div>
                 <div className="searchBox-wrapper">
@@ -73,7 +76,7 @@ const SearchBox = ({
                             onChange={event => {
                                 // setQuery(event.currentTarget.value);
                                 setShowFederatedSearch(true);
-                                refine(event.currentTarget.value);
+                                refine(query);
                             }}
                             placeholder="Search..."
                         />

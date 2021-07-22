@@ -78,7 +78,7 @@ const SearchResults = ({
                 </QueryRuleCustomData>
                 <div></div>
                 <div className="search-panel">
-                    <CustomSearchBox
+                    {/* <CustomSearchBox
                         style={{ display: 'none' }}
                         inputValue={inputValue}
                         setInputValue={setInputValue}
@@ -88,7 +88,7 @@ const SearchResults = ({
                         setSearchVisible={setSearchVisible}
                         setShowFederatedSearch={setShowFederatedSearch}
                         showFederatedSearch={setShowFederatedSearch}
-                    />
+                    /> */}
                     <Index indexName={window.indexSugg} indexId="suggestions">
                         {/* <CustomSuggestions
                                 setQuery={setQuery}
