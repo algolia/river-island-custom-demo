@@ -273,11 +273,11 @@ const SearchResults = ({
                                 filterAnim={filterAnim}
                                 setFilterAnim={setFilterAnim}
                             />
-                            {/* <CustomFilters
-                                    filterAnim={filterAnim}
-                                    isDynamicFactesOn={isDynamicFactesOn}
-                                    setIsDynamicFactesOn={setIsDynamicFactesOn}
-                                /> */}
+                            <CustomFilters
+                                filterAnim={filterAnim}
+                                isDynamicFactesOn={isDynamicFactesOn}
+                                setIsDynamicFactesOn={setIsDynamicFactesOn}
+                            />
                             <CustomHits
                                 setModal={setModal}
                                 setProduct={setProduct}
