@@ -10,7 +10,7 @@ import {
 //COMPONENTS
 import { CustomHits } from './Hits';
 import { CustomFilters } from './Filters';
-// import CustomSearchBox from './SearchBox';
+import CustomSearchBox from './SearchBox';
 import ProductDetails from '../ProductsDetails/ProductsDetails';
 import Banner from './banner';
 // import CustomSuggestions from './Suggestions';
