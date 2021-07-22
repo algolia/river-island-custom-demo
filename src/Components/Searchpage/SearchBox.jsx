@@ -17,40 +17,44 @@ const SearchBox = ({
     setSearchVisible,
     query
 }) => {
-    return (
-        <div>
-            <div className="searchBox-wrapper">
-                <form
-                    action=""
-                    role="search"
-                    onSubmit={e => {
-                        e.preventDefault();
-                        setShowFederatedSearch(false);
-                        setSearchVisible(true);
-                        // setQuery(e.currentTarget.value);
-                    }}
-                >
-                    <input
-                        id="input-search2"
-                        type="search"
-                        value={query}
-                        onChange={event => {
-                            // setQuery(event.currentTarget.value);
-                            setShowFederatedSearch(true);
-                            refine(event.currentTarget.value);
+    if (query === '') {
+        return (
+            <div>
+                <div className="searchBox-wrapper">
+                    <form
+                        action=""
+                        role="search"
+                        onSubmit={e => {
+                            e.preventDefault();
+                            setShowFederatedSearch(false);
+                            setSearchVisible(true);
+                            // setQuery(e.currentTarget.value);
                         }}
-                        placeholder="Search..."
-                    />
-                </form>
-                {/* <VoiceSearch searchAsYouSpeak={false} language={'en-US'} /> */}
-            </div>
-            {/* <CustomCurrentRefinements
+                    >
+                        <input
+                            id="input-search2"
+                            type="search"
+                            value={query}
+                            onChange={event => {
+                                // setQuery(event.currentTarget.value);
+                                setShowFederatedSearch(true);
+                                refine(event.currentTarget.value);
+                            }}
+                            placeholder="Search..."
+                        />
+                    </form>
+                    {/* <VoiceSearch searchAsYouSpeak={false} language={'en-US'} /> */}
+                </div>
+                {/* <CustomCurrentRefinements
                     transformItems={items =>
                         items.filter(item => item.attribute !== 'price')
                     }
                 /> */}
-        </div>
-    );
+            </div>
+        );
+    } else {
+        refine(query)
+    }
 };
 // else {
 //     refine(query);
