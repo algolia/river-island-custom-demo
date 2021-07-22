@@ -13,46 +13,13 @@ import {
 const SearchBox = ({
     refine,
     setQuery,
+    currentRefinements,
     setShowFederatedSearch,
     setSearchVisible,
     query
 }) => {
     if (query === '') {
-        return (
-            <div>
-                <div className="searchBox-wrapper">
-                    <form
-                        action=""
-                        role="search"
-                        onSubmit={e => {
-                            e.preventDefault();
-                            setShowFederatedSearch(false);
-                            setSearchVisible(true);
-                            // setQuery(e.currentTarget.value);
-                        }}
-                    >
-                        <input
-                            id="input-search2"
-                            type="search"
-                            onChange={event => {
-                                // setQuery(event.currentTarget.value);
-                                setShowFederatedSearch(true);
-                                refine(event.currentTarget.value);
-                            }}
-                            placeholder="Search..."
-                        />
-                    </form>
-                    {/* <VoiceSearch searchAsYouSpeak={false} language={'en-US'} /> */}
-                </div>
-                {/* <CustomCurrentRefinements
-                    transformItems={items =>
-                        items.filter(item => item.attribute !== 'price')
-                    }
-                /> */}
-            </div>
-        );
-    } else {
-        refine(query);
+        console.log('IF', query);
         return (
             <div>
                 <div className="searchBox-wrapper">
@@ -71,9 +38,46 @@ const SearchBox = ({
                             type="search"
                             value={query}
                             onChange={event => {
-                                // setQuery(event.currentTarget.value);
+                                setQuery(event.currentTarget.value);
                                 setShowFederatedSearch(true);
                                 refine(event.currentTarget.value);
+                            }}
+                            placeholder="Search..."
+                        />
+                    </form>
+                    {/* <VoiceSearch searchAsYouSpeak={false} language={'en-US'} /> */}
+                </div>
+                {/* <CustomCurrentRefinements
+                    transformItems={items =>
+                        items.filter(item => item.attribute !== 'price')
+                    }
+                /> */}
+            </div>
+        );
+    } else {
+        refine(query);
+        console.log('ELSE', query);
+        return (
+            <div>
+                <div className="searchBox-wrapper">
+                    <form
+                        action=""
+                        role="search"
+                        onSubmit={e => {
+                            e.preventDefault();
+                            setShowFederatedSearch(false);
+                            setSearchVisible(true);
+                            // setQuery(e.currentTarget.value);
+                        }}
+                    >
+                        <input
+                            id="input-search2"
+                            type="search"
+                            value={query}
+                            onChange={event => {
+                                setQuery(event.currentTarget.value);
+                                setShowFederatedSearch(true);
+                                refine(query);
                             }}
                             placeholder="Search..."
                         />

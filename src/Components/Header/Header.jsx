@@ -65,6 +65,7 @@ const Header = ({
                             setGirls(false);
                             setBoys(false);
                             setSale(false);
+                            setQuery(null);
                             setShowFederatedSearch(false);
                         }}
                     >
@@ -77,6 +78,7 @@ const Header = ({
                             setGirls(false);
                             setBoys(false);
                             setSale(false);
+                            setQuery(null);
                             setSearchVisible(false);
                             setShowFederatedSearch(false);
                         }}
@@ -90,6 +92,7 @@ const Header = ({
                             setGirls(true);
                             setBoys(false);
                             setSale(false);
+                            setQuery(null);
                             setSearchVisible(false);
                             setShowFederatedSearch(false);
                         }}
@@ -103,6 +106,7 @@ const Header = ({
                             setGirls(true);
                             setBoys(true);
                             setSale(false);
+                            setQuery(null);
                             setSearchVisible(false);
                             setShowFederatedSearch(false);
                         }}
@@ -116,6 +120,7 @@ const Header = ({
                             setGirls(false);
                             setBoys(false);
                             setSale(true);
+                            setQuery(null);
                             setSearchVisible(false);
                             setShowFederatedSearch(false);
                         }}
