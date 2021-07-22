@@ -26,9 +26,10 @@ const SearchBox = ({
                         role="search"
                         onSubmit={e => {
                             e.preventDefault();
+                            console.log('Event', e.currentTarget.value);
                             setShowFederatedSearch(false);
                             setSearchVisible(true);
-                            setQuery(e.currentTarget.value);
+                            // setQuery(e.currentTarget.value);
                         }}
                     >
                         <input
@@ -36,7 +37,12 @@ const SearchBox = ({
                             type="search"
                             value={query}
                             onChange={event => {
-                                setQuery(event.currentTarget.value);
+                                // setQuery(event.currentTarget.value);
+                                console.log(
+                                    'Event1',
+                                    event.currentTarget.value
+                                );
+                                setShowFederatedSearch(true);
                                 refine(event.currentTarget.value);
                             }}
                             placeholder="Search..."
@@ -71,7 +77,13 @@ const SearchBox = ({
                             type="search"
                             value={query}
                             onChange={event => {
-                                setQuery(event.currentTarget.value);
+                                // setQuery(event.currentTarget.value);
+                                console.log(
+                                    'Event2',
+                                    event.currentTarget.value
+                                );
+                                console.log('Query', query);
+                                setShowFederatedSearch(true);
                                 refine(event.currentTarget.value);
                             }}
                             placeholder="Search..."

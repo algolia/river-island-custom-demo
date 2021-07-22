@@ -29,7 +29,7 @@ const SearchResults = ({
     sale,
     showFederatedSearch,
     setShowFederatedSearch,
-    setInputValue, 
+    setInputValue,
     inputValue
 }) => {
     const searchClient = algoliasearch(window.appID, window.key);
@@ -81,6 +81,7 @@ const SearchResults = ({
                     <div></div>
                     <div className="search-panel">
                         <CustomSearchBox
+                            style={{ display: 'none' }}
                             inputValue={inputValue}
                             setInputValue={setInputValue}
                             query={query}

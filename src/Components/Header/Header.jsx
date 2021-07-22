@@ -1,8 +1,12 @@
 import React from 'react';
 
+import { InstantSearch } from 'react-instantsearch-dom';
+
 // COMPONENT IMPORT
 import headerUp from '../../Assets/Images/headerUp.png';
 import SelectPersona from './Persona';
+import CustomSearchBox from '../Searchpage/SearchBox';
+import algoliasearch from 'algoliasearch/lite';
 
 const Header = ({
     setSelectedOption,
@@ -13,13 +17,16 @@ const Header = ({
     setBoys,
     setSale,
     showFederatedSearch,
-    setShowFederatedSearch
+    setShowFederatedSearch,
+    searchVisible,
+    setQuery,
+    query
 }) => {
     const focus = () => {
         const input = document.querySelector('#input-search2');
-        console.log('INPUT', input);
         input.focus();
     };
+    const searchClient = algoliasearch(window.appID, window.key);
     return (
         <header className="header">
             <img src={headerUp} alt="" className="headerUp" />
@@ -37,6 +44,7 @@ const Header = ({
                         setGirls(false);
                         setBoys(false);
                         setSale(false);
+                        setShowFederatedSearch(false);
                     }}
                 >
                     <path d="M107.4 17.1c2.4 0 4.1-0.3 5.5-1.1 1.8-1.1 2.6-3 2.6-5.4 0-2.6-0.9-4.2-2.4-5.2 -1.3-0.9-3.1-1.3-5.8-1.3h-3.1v30.6h-5.3V0.7h9.3c3.5 0 6.4 0.4 8.9 1.9 3.8 2.5 3.9 6.4 3.9 7.3 0 4.2-2.3 7.4-6.4 8.8 -0.4 0.1-0.8 0.2-1.2 0.3l10.9 15.5h-6l-12-17.5H107.4z"></path>
@@ -125,15 +133,28 @@ const Header = ({
                 </ul>
                 <div
                     className="search-wrapper"
-                    onClick={() => {
-                        setShowFederatedSearch(!showFederatedSearch);
-                        setMen(false);
-                        setWomen(false);
-                        setGirls(false);
-                        setTimeout(focus, 500);
-                    }}
+                    // onClick={() => {
+                    //     setShowFederatedSearch(!showFederatedSearch);
+                    //     setMen(false);
+                    //     setWomen(false);
+                    //     setGirls(false);
+                    //     setTimeout(focus, 500);
+                    // }}
                 >
-                    <p className="search-placeholder">Search</p>
+                    <InstantSearch
+                        searchClient={searchClient}
+                        indexName={window.index}
+                    >
+                        <CustomSearchBox
+                            query={query}
+                            setQuery={setQuery}
+                            setShowFederatedSearch={setShowFederatedSearch}
+                            showFederatedSearch={showFederatedSearch}
+                            searchVisible={searchVisible}
+                            setSearchVisible={setSearchVisible}
+                            style={{ width: '350px' }}
+                        />
+                    </InstantSearch>
                     <svg
                         viewBox="0 0 897 897"
                         fill="none"
