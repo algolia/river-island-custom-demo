@@ -26,6 +26,7 @@ const App = () => {
         <div>
             <InstantSearch searchClient={searchClient} indexName={window.index}>
                 <Header
+                    setQuery={setQuery}
                     query={query}
                     setSelectedOption={setSelectedOption}
                     searchVisible={searchVisible}

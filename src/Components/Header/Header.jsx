@@ -1,7 +1,5 @@
 import React from 'react';
 
-
-
 // COMPONENT IMPORT
 import headerUp from '../../Assets/Images/headerUp.png';
 import SelectPersona from './Persona';
@@ -42,6 +40,7 @@ const Header = ({
                         setGirls(false);
                         setBoys(false);
                         setSale(false);
+                        setQuery('');
                         setShowFederatedSearch(false);
                     }}
                 >
