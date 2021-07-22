@@ -36,7 +36,7 @@ const Hits = ({
                 {hits.map(hit => (
                     <li
                         key={hit.objectID}
-                        className="hit-list"
+                        className={`hit-list ${hit._rankingInfo.promoted ? 'promoted' : ''}`}
                         onClick={() => {
                             setProduct(hit);
                             setModal(true);
@@ -77,12 +77,9 @@ const HitsFederated = ({
             <div className="sort-and-stat">{/* <Stats /> */}</div>
             <ul className="hits-list">
                 {hits.map(hit => {
-                    console.log(typeof hit._rankingInfo.promoted);
                     return (
                         <li
-                            className={`hit-list ${
-                                hit._rankingInfo.promoted ? 'promoted' : 'test'
-                            }`}
+                        className={`hit-list ${hit._rankingInfo.promoted ? 'promoted' : ''}`}
                             key={hit.objectID}
                             onClick={() => {
                                 setProduct(hit);
@@ -90,6 +87,7 @@ const HitsFederated = ({
                                 setShowFederatedSearch(false);
                                 setSearchVisible(true);
                             }}
+                            data="test"
                         >
                             <div className="image-wrapper">
                                 <img src={hit.images[0].url} alt="" />
