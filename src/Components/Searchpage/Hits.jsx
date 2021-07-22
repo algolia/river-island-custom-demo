@@ -79,7 +79,7 @@ const HitsFederated = ({
     return (
         <div className="hits-wrapper">
             <div className="sort-and-stat">
-                <Stats />
+                {/* <Stats /> */}
             </div>
             <ul className="hits-list">
                 {hits.map(hit => (

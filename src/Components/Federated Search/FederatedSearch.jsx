@@ -46,7 +46,7 @@ const FederatedSearch = ({
                         searchVisible={searchVisible}
                         setSearchVisible={setSearchVisible}
                     />
-                    <h3 className="federated-title">Products</h3>
+                    {/* <h3 className="federated-title">Products</h3> */}
                     <Configure hitsPerPage={6} />
                     <CustomHitsFederated
                         setProduct={setProduct}
