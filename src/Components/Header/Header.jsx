@@ -1,12 +1,11 @@
 import React from 'react';
 
-import { InstantSearch } from 'react-instantsearch-dom';
+
 
 // COMPONENT IMPORT
 import headerUp from '../../Assets/Images/headerUp.png';
 import SelectPersona from './Persona';
 import CustomSearchBox from '../Searchpage/SearchBox';
-import algoliasearch from 'algoliasearch/lite';
 
 const Header = ({
     setSelectedOption,
@@ -26,7 +25,6 @@ const Header = ({
         const input = document.querySelector('#input-search2');
         input.focus();
     };
-    const searchClient = algoliasearch(window.appID, window.key);
     return (
         <header className="header">
             <img src={headerUp} alt="" className="headerUp" />
@@ -141,20 +139,15 @@ const Header = ({
                     //     setTimeout(focus, 500);
                     // }}
                 >
-                    <InstantSearch
-                        searchClient={searchClient}
-                        indexName={window.index}
-                    >
-                        <CustomSearchBox
-                            query={query}
-                            setQuery={setQuery}
-                            setShowFederatedSearch={setShowFederatedSearch}
-                            showFederatedSearch={showFederatedSearch}
-                            searchVisible={searchVisible}
-                            setSearchVisible={setSearchVisible}
-                            style={{ width: '350px' }}
-                        />
-                    </InstantSearch>
+                    <CustomSearchBox
+                        query={query}
+                        setQuery={setQuery}
+                        setShowFederatedSearch={setShowFederatedSearch}
+                        showFederatedSearch={showFederatedSearch}
+                        searchVisible={searchVisible}
+                        setSearchVisible={setSearchVisible}
+                        style={{ width: '350px' }}
+                    />
                     <svg
                         viewBox="0 0 897 897"
                         fill="none"
