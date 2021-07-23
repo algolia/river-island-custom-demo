@@ -41,7 +41,7 @@ const Hits = ({
                     <li
                         key={hit.objectID}
                         className={`hit-list ${
-                            hit._rankingInfo !== undefined ? 'promoted' : ''
+                            hit._rankingInfo.promoted ? 'promoted' : ''
                         }`}
                         onClick={() => {
                             setProduct(hit);
@@ -88,13 +88,10 @@ const HitsFederated = ({
                     }`}
                 >
                     {hits.map(hit => {
+                        console.log('HIT', hit._rankingInfo);
                         return (
                             <li
-                                className={`hit-list ${
-                                    hit._rankingInfo !== undefined
-                                        ? 'promoted'
-                                        : ''
-                                }`}
+                                className="hits-list"
                                 key={hit.objectID}
                                 onClick={() => {
                                     setProduct(hit);
