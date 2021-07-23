@@ -74,6 +74,8 @@ const Hits = ({
                                 </div>
                             </li>
                         );
+                    } else {
+                        ('');
                     }
                 })}
             </ul>
@@ -142,6 +144,8 @@ const HitsFederated = ({
                 </ul>
             </div>
         );
+    } else {
+        ('');
     }
     if (hits.length === 0) {
         return <p>No results</p>;
