@@ -16,11 +16,12 @@ const SearchBox = ({
     currentRefinements,
     setShowFederatedSearch,
     setSearchVisible,
-    query
+    query,
+    setMen
 }) => {
     if (query === '') {
         console.log('IF', query);
-        refine('')
+        refine('');
         return (
             <div>
                 <div className="searchBox-wrapper">
@@ -30,7 +31,7 @@ const SearchBox = ({
                         onSubmit={e => {
                             e.preventDefault();
                             setShowFederatedSearch(false);
-                            setSearchVisible(true);
+                            setSearchVisible(false);
                             // setQuery(e.currentTarget.value);
                         }}
                     >
@@ -67,7 +68,7 @@ const SearchBox = ({
                         onSubmit={e => {
                             e.preventDefault();
                             setShowFederatedSearch(false);
-                            setSearchVisible(true);
+                            setSearchVisible(false);
                             // setQuery(e.currentTarget.value);
                         }}
                     >

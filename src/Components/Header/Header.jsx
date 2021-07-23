@@ -152,6 +152,7 @@ const Header = ({
                         searchVisible={searchVisible}
                         setSearchVisible={setSearchVisible}
                         style={{ width: '350px' }}
+                        setMen={setMen}
                     />
                     <svg
                         viewBox="0 0 897 897"
