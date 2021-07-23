@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
-//CSS / SCSS
+// CSS / SCSS
 
 import './SCSS/index.scss';
 
-//COMPONENTS
+// COMPONENTS
 import Header from './Components/Header/Header';
 import SearchResults from './Components/Searchpage/SearchResult';
 import Homepage from './Components/Homepage/Homepage';

@@ -75,7 +75,7 @@ const Hits = ({
                             </li>
                         );
                     } else {
-                        ('');
+                        return '';
                     }
                 })}
             </ul>
@@ -139,13 +139,13 @@ const HitsFederated = ({
                                     </div>
                                 </li>
                             );
+                        } else {
+                            return '';
                         }
                     })}
                 </ul>
             </div>
         );
-    } else {
-        ('');
     }
     if (hits.length === 0) {
         return <p>No results</p>;
