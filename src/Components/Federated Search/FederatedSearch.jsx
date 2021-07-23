@@ -52,16 +52,6 @@ const FederatedSearch = ({
                     </div>
                 </div>
                 <div className="federatedSearch-products">
-                    {/* <CustomSearchBox
-                        style={{ display: 'none' }}
-                        query={query}
-                        setQuery={setQuery}
-                        setShowFederatedSearch={setShowFederatedSearch}
-                        showFederatedSearch={showFederatedSearch}
-                        searchVisible={searchVisible}
-                        setSearchVisible={setSearchVisible}
-                    /> */}
-                    {/* <h3 className="federated-title">Products</h3> */}
                     <Configure hitsPerPage={6} getRankingInfo={true} />
                     <CustomHitsFederated
                         setProduct={setProduct}

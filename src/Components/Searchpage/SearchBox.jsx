@@ -16,8 +16,13 @@ const SearchBox = ({
     currentRefinements,
     setShowFederatedSearch,
     setSearchVisible,
+    searchVisible,
     query,
-    setMen
+    men,
+    women,
+    girls,
+    boys,
+    sale
 }) => {
     if (query === '') {
         console.log('IF', query);
@@ -31,7 +36,7 @@ const SearchBox = ({
                         onSubmit={e => {
                             e.preventDefault();
                             setShowFederatedSearch(false);
-                            setSearchVisible(false);
+                            setSearchVisible(true);
                             // setQuery(e.currentTarget.value);
                         }}
                     >
@@ -43,6 +48,43 @@ const SearchBox = ({
                                 setQuery(event.currentTarget.value);
                                 setShowFederatedSearch(true);
                                 refine(event.currentTarget.value);
+                            }}
+                            placeholder="Search..."
+                        />
+                    </form>
+                    {/* <VoiceSearch searchAsYouSpeak={false} language={'en-US'} /> */}
+                </div>
+                {/* <CustomCurrentRefinements
+                    transformItems={items =>
+                        items.filter(item => item.attribute !== 'price')
+                    }
+                /> */}
+            </div>
+        );
+    } else if (men || women || girls || boys || sale) {
+        refine(query);
+        console.log('ELSE', men);
+        return (
+            <div>
+                <div className="searchBox-wrapper">
+                    <form
+                        action=""
+                        role="search"
+                        onSubmit={e => {
+                            e.preventDefault();
+                            setShowFederatedSearch(false);
+                            setSearchVisible(true);
+                            // setQuery(e.currentTarget.value);
+                        }}
+                    >
+                        <input
+                            id="input-search2"
+                            type="search"
+                            value={query}
+                            onChange={event => {
+                                setQuery(event.currentTarget.value);
+                                setShowFederatedSearch(true);
+                                refine(query);
                             }}
                             placeholder="Search..."
                         />
@@ -68,7 +110,7 @@ const SearchBox = ({
                         onSubmit={e => {
                             e.preventDefault();
                             setShowFederatedSearch(false);
-                            setSearchVisible(false);
+                            setSearchVisible(true);
                             // setQuery(e.currentTarget.value);
                         }}
                     >
