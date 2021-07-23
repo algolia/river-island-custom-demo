@@ -44,7 +44,11 @@ const ProductDetails = ({ product, setModal }) => {
                         <h3>Recommandations</h3>
                     </div>
                     <div className="modal-hits">
-                        <Configure filters="breadcrumbs.lvl0:men" hitsPerPage={8} />
+                        <Configure
+                            getRankingInfo={true}
+                            filters="breadcrumbs.lvl0:men"
+                            hitsPerPage={8}
+                        />
                         <CustomHitsModal />
                     </div>
                     <div>
@@ -52,6 +56,7 @@ const ProductDetails = ({ product, setModal }) => {
                     </div>
                     <div className="modal-hits">
                         <Configure
+                            getRankingInfo={true}
                             hitsPerPage={8}
                             filters="breadcrumbs.lvl0:girls"
                         />
