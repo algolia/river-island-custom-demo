@@ -91,7 +91,9 @@ const HitsFederated = ({
                         console.log('HIT', hit._rankingInfo);
                         return (
                             <li
-                                className="hits-list"
+                                className={`hit-list ${
+                                    hit._rankingInfo.promoted ? 'promoted' : ''
+                                }`}
                                 key={hit.objectID}
                                 onClick={() => {
                                     setProduct(hit);
