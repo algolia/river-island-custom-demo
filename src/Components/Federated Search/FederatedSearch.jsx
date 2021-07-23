@@ -21,7 +21,12 @@ const FederatedSearch = ({
     setMen,
     setGirls,
     setBoys,
-    setSale
+    setSale,
+    men,
+    women,
+    girls,
+    boys,
+    sale
 }) => {
     return (
         <div className="federatedSearch">
@@ -58,6 +63,11 @@ const FederatedSearch = ({
                         setModal={setModal}
                         setShowFederatedSearch={setShowFederatedSearch}
                         setSearchVisible={setSearchVisible}
+                        men={men}
+                        women={women}
+                        girls={girls}
+                        sale={sale}
+                        boys={boys}
                     />
                 </div>
             </div>

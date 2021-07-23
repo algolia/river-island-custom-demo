@@ -64,6 +64,11 @@ const SearchResults = ({
                     setGirls={setGirls}
                     setMen={setMen}
                     setWomen={setWomen}
+                    men={men}
+                    women={women}
+                    girls={girls}
+                    boys={boys}
+                    sale={sale}
                 />
             </div>
             <div

@@ -25,7 +25,6 @@ const SearchBox = ({
     sale
 }) => {
     if (query === '') {
-        console.log('IF', query);
         refine('');
         return (
             <div>
@@ -35,8 +34,8 @@ const SearchBox = ({
                         role="search"
                         onSubmit={e => {
                             e.preventDefault();
-                            setShowFederatedSearch(false);
-                            setSearchVisible(true);
+                            // setShowFederatedSearch(false);
+                            // setSearchVisible(true);
                             // setQuery(e.currentTarget.value);
                         }}
                     >
@@ -46,7 +45,7 @@ const SearchBox = ({
                             value={query}
                             onChange={event => {
                                 setQuery(event.currentTarget.value);
-                                setShowFederatedSearch(true);
+                                // setShowFederatedSearch(true);
                                 refine(event.currentTarget.value);
                             }}
                             placeholder="Search..."
@@ -63,7 +62,6 @@ const SearchBox = ({
         );
     } else if (men || women || girls || boys || sale) {
         refine(query);
-        console.log('ELSE', men);
         return (
             <div>
                 <div className="searchBox-wrapper">
@@ -72,8 +70,8 @@ const SearchBox = ({
                         role="search"
                         onSubmit={e => {
                             e.preventDefault();
-                            setShowFederatedSearch(false);
-                            setSearchVisible(true);
+                            // setShowFederatedSearch(false);
+                            // setSearchVisible(false);
                             // setQuery(e.currentTarget.value);
                         }}
                     >
@@ -83,7 +81,7 @@ const SearchBox = ({
                             value={query}
                             onChange={event => {
                                 setQuery(event.currentTarget.value);
-                                setShowFederatedSearch(true);
+                                // setShowFederatedSearch(true);
                                 refine(query);
                             }}
                             placeholder="Search..."
@@ -100,7 +98,6 @@ const SearchBox = ({
         );
     } else {
         refine(query);
-        console.log('ELSE', query);
         return (
             <div>
                 <div className="searchBox-wrapper">
@@ -109,9 +106,9 @@ const SearchBox = ({
                         role="search"
                         onSubmit={e => {
                             e.preventDefault();
+                            setQuery(query);
                             setShowFederatedSearch(false);
                             setSearchVisible(true);
-                            // setQuery(e.currentTarget.value);
                         }}
                     >
                         <input
@@ -120,7 +117,7 @@ const SearchBox = ({
                             value={query}
                             onChange={event => {
                                 setQuery(event.currentTarget.value);
-                                setShowFederatedSearch(false);
+                                // setShowFederatedSearch(false);
                                 refine(query);
                             }}
                             placeholder="Search..."

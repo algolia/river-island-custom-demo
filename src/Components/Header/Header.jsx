@@ -17,7 +17,12 @@ const Header = ({
     setShowFederatedSearch,
     searchVisible,
     setQuery,
-    query
+    query,
+    men,
+    boys,
+    girls,
+    sale,
+    women
 }) => {
     // const focus = () => {
     //     const input = document.querySelector('#input-search2');
@@ -135,14 +140,20 @@ const Header = ({
                 </ul>
                 <div
                     className="search-wrapper"
-                    // onClick={() => {
-                    //     setWomen(false);
-                    //     setSearchVisible(true);
-                    //     setMen(false);
-                    //     setGirls(false);
-                    //     setBoys(false);
-                    //     setSale(false);
-                    // }}
+                    onClick={() => {
+                        if (
+                            searchVisible ||
+                            men ||
+                            women ||
+                            girls ||
+                            boys ||
+                            sale
+                        ) {
+                            setShowFederatedSearch(false);
+                        } else {
+                            setShowFederatedSearch(true);
+                        }
+                    }}
                 >
                     <CustomSearchBox
                         query={query}
