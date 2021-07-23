@@ -120,7 +120,7 @@ const SearchBox = ({
                             value={query}
                             onChange={event => {
                                 setQuery(event.currentTarget.value);
-                                setShowFederatedSearch(true);
+                                setShowFederatedSearch(false);
                                 refine(query);
                             }}
                             placeholder="Search..."
