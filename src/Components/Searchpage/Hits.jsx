@@ -53,7 +53,14 @@ const Hits = ({
                                 }}
                             >
                                 <div className="image-wrapper">
-                                    <img src={hit.images[0].url} alt="" />
+                                    <img
+                                        src={
+                                            hit.images
+                                                ? hit.images[0].url
+                                                : 'https://images.unsplash.com/photo-1523878288860-7ad281611901?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8dGV4dHVyZXxlbnwwfDB8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
+                                        }
+                                        alt=""
+                                    />
                                 </div>
                                 <div className="infos">
                                     <h3>
@@ -91,6 +98,7 @@ const HitsFederated = ({
                     }`}
                 >
                     {hits.map(hit => {
+                        console.log('IMAGE', hit.images);
                         if (hit._rankingInfo) {
                             return (
                                 <li
@@ -108,7 +116,14 @@ const HitsFederated = ({
                                     }}
                                 >
                                     <div className="image-wrapper">
-                                        <img src={hit.images[0].url} alt="" />
+                                        <img
+                                            src={
+                                                hit.images
+                                                    ? hit.images[0].url
+                                                    : 'https://images.unsplash.com/photo-1523878288860-7ad281611901?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8dGV4dHVyZXxlbnwwfDB8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
+                                            }
+                                            alt=""
+                                        />
                                     </div>
                                     <div className="infos">
                                         <h3>
@@ -127,6 +142,9 @@ const HitsFederated = ({
                 </ul>
             </div>
         );
+    }
+    if (hits.length === 0) {
+        return <p>No results</p>;
     }
 };
 
