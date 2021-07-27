@@ -99,7 +99,7 @@ const HitsFederated = ({
                         hits.length < 3 ? 'hits-list-small' : ''
                     }`}
                 >
-                    {hits.map(hit => {
+                    {hits.slice(0,6).map(hit => {
                         if (hit._rankingInfo) {
                             return (
                                 <li
