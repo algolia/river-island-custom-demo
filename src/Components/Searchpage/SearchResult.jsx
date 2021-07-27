@@ -287,6 +287,7 @@ const SearchResults = ({
                                 userToken={selectedOption}
                                 enablePersonalization={true}
                                 getRankingInfo={true}
+                                hitsPerPage={21}
                             />
                             <FilterBtn
                                 filterAnim={filterAnim}
