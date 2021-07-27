@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import algoliasearch from 'algoliasearch/lite';
 
 import {
     Pagination,
     Configure,
     QueryRuleCustomData,
-    Index
+    Index,
+    InstantSearch
 } from 'react-instantsearch-dom';
 
 //COMPONENTS
@@ -43,7 +45,8 @@ const SearchResults = ({
     const [product, setProduct] = useState(null);
     const [modal, setModal] = useState(false);
     const [isDynamicFactesOn, setIsDynamicFactesOn] = useState(false);
-
+    const searchClient = algoliasearch(window.appID, window.key);
+    console.log(query)
     return (
         <div className="searchResult-wrapper">
             <div
@@ -56,6 +59,12 @@ const SearchResults = ({
                     }
                 }}
             >
+                {/* <InstantSearch
+                searchClient={searchClient} indexName={window.index}
+                searchState={{
+                    query: 'pink'
+                  }}
+                > */}
                 <FederatedSearch
                     query={query}
                     setQuery={setQuery}
@@ -76,6 +85,7 @@ const SearchResults = ({
                     boys={boys}
                     sale={sale}
                 />
+                {/* </InstantSearch> */}
             </div>
             <div
                 className={`container ${
