@@ -21,11 +21,14 @@ const App = () => {
     const [selectedOption, setSelectedOption] = useState(null);
     const [query, setQuery] = useState('');
     const [showFederatedSearch, setShowFederatedSearch] = useState(false);
+    const [homepage, setHomepage] = useState(true);
     const searchClient = algoliasearch(window.appID, window.key);
     return (
         <div>
             <InstantSearch searchClient={searchClient} indexName={window.index}>
                 <Header
+                    setHomepage={setHomepage}
+                    homepage={homepage}
                     setQuery={setQuery}
                     query={query}
                     setSelectedOption={setSelectedOption}

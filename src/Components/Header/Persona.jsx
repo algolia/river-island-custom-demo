@@ -15,7 +15,7 @@ const SelectPersona = ({ setSelectedOption }) => {
         input: styles => ({ width: '100%' }),
         container: styles => ({ width: '100%' }),
         valueContainer: styles => ({ backgroundColor: 'transparent', display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }),
-        placeholder: styles => ({ backgroundColor: 'transparent', fontSize: '1rem', color: 'black', fontFamily: "Oswald", textTransform: 'uppercase' }),
+        placeholder: styles => ({ backgroundColor: 'transparent', fontSize: '1rem', color: 'black', fontFamily: "proxima-nova", textTransform: 'capitalize' }),
         indicatorSeparator: styles => ({ display: "none" }),
         dropdownIndicator: styles => ({ color: 'black' }),
         singleValue: styles => ({ top: '0', width: '50%' }),
@@ -30,7 +30,7 @@ const SelectPersona = ({ setSelectedOption }) => {
                 cursor: 'pointer',
                 width: '80%',
                 textAlign: 'center',
-                textTransform: "uppercase",
+                textTransform: "capitalize",
                 fontWeight: 'bold',
                 borderRadius: '2px'
 

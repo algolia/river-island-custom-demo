@@ -133,13 +133,13 @@
 .refinement-content {
     display: flex;
     justify-content: center;
-    position: absolute;
+    position: relative;
     width: 100%;
     margin: 0 auto;
     height: auto;
     transform: translateX(0%);
     transform: translateY(6rem);
-    z-index: 99;
+    z-index: 999;
     .refinement-item {
         display: flex;
         align-items: center;
@@ -160,6 +160,11 @@
             }
             .refinement-filter {
                 @include btn;
+                display: flex;
+                align-items: center;
+                span{
+                    margin-left: 0.5rem;
+                }
             }
         }
     }

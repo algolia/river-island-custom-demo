@@ -100,7 +100,6 @@ const HitsFederated = ({
                     }`}
                 >
                     {hits.map(hit => {
-                        console.log('IMAGE', hit.images);
                         if (hit._rankingInfo) {
                             return (
                                 <li
