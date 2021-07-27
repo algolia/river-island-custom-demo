@@ -5,11 +5,11 @@
 }
 
 .header-wrapper {
-    width: 70%;
+    width: 90%;
     height: 4.2rem;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
 
     ul {
@@ -67,6 +67,10 @@
         display: flex;
         align-items: center;
         cursor: pointer;
+
+        form{
+            position: relative;
+        }
         .search-placeholder {
             width: 140px;
             font-weight: 500;
@@ -78,7 +82,8 @@
         }
         svg {
             width: 30px;
-            right: 15rem;
+            top: 1.2rem;
+            right: 1rem;
             position: absolute;
         }
         input{
