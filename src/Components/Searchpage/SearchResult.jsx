@@ -50,6 +50,11 @@ const SearchResults = ({
                 className={`container-federated ${
                     showFederatedSearch ? 'active' : 'hidden'
                 }`}
+                onClick={e => {
+                    if (e.target === e.currentTarget) {
+                        setShowFederatedSearch(false);
+                    }
+                }}
             >
                 <FederatedSearch
                     query={query}
@@ -105,13 +110,13 @@ const SearchResults = ({
                         setShowFederatedSearch={setShowFederatedSearch}
                         showFederatedSearch={setShowFederatedSearch}
                     /> */}
-                    <Index indexName={window.indexSugg} indexId="suggestions">
+                    {/* <Index indexName={window.indexSugg} indexId="suggestions"> */}
                         {/* <CustomSuggestions
                                 setQuery={setQuery}
                                 query={query}
                                 attribute="name"
                             /> */}
-                    </Index>
+                    {/* </Index> */}
                     <Banner />
                     <CurrentRefinementSR/>
 
@@ -121,16 +126,16 @@ const SearchResults = ({
                                 filterAnim={filterAnim}
                                 setFilterAnim={setFilterAnim}
                             />
-                            <Configure
-                                filters="breadcrumbs.lvl0:women"
-                                hitsPerPage={20}
-                                getRankingInfo={true}
-                                enablePersonalization={true}
-                            />
                             <CustomFilters
                                 filterAnim={filterAnim}
                                 isDynamicFactesOn={isDynamicFactesOn}
                                 setIsDynamicFactesOn={setIsDynamicFactesOn}
+                            />
+                            <Configure
+                                filters="breadcrumbs.lvl0:women"
+                                hitsPerPage={21}
+                                getRankingInfo={true}
+                                enablePersonalization={true}
                             />
                             <CustomHits
                                 setModal={setModal}
@@ -157,6 +162,7 @@ const SearchResults = ({
                             <Configure
                                 userToken={selectedOption}
                                 getRankingInfo={true}
+                                hitsPerPage={21}
                                 filters="breadcrumbs.lvl0:men"
                                 enablePersonalization={true}
                             />
@@ -192,6 +198,7 @@ const SearchResults = ({
                                 userToken={selectedOption}
                                 filters="breadcrumbs.lvl0:girls"
                                 enablePersonalization={true}
+                                hitsPerPage={21}
                                 getRankingInfo={true}
                             />
                             <CustomFilters
@@ -225,6 +232,7 @@ const SearchResults = ({
                                 userToken={selectedOption}
                                 getRankingInfo={true}
                                 filters="breadcrumbs.lvl0:boys"
+                                hitsPerPage={21}
                                 enablePersonalization={true}
                             />
                             <CustomFilters
@@ -258,6 +266,7 @@ const SearchResults = ({
                                 userToken={selectedOption}
                                 enablePersonalization={true}
                                 ruleContexts={'sale'}
+                                hitsPerPage={21}
                                 getRankingInfo={true}
                             />
                             <CustomFilters

@@ -10,6 +10,7 @@ const Hits = ({
     setShowFederatedSearch,
     setSearchVisible
 }) => {
+    console.log(hits)
     return (
         <div className="hits-wrapper">
             <div className="sort-and-stat">
@@ -18,8 +19,8 @@ const Hits = ({
                     defaultRefinement={window.index}
                     items={[
                         {
-                            value: window.index_new,
-                            label: 'Newness'
+                            value: window.index,
+                            label: 'Relevance'
                         },
                         {
                             value: window.index_desc,
@@ -42,9 +43,7 @@ const Hits = ({
                         return (
                             <li
                                 key={hit.objectID}
-                                className={`hit-list ${
-                                    hit._rankingInfo.promoted ? 'promoted' : ''
-                                }`}
+                                className="hit-list"
                                 onClick={() => {
                                     setProduct(hit);
                                     setModal(true);
@@ -70,7 +69,7 @@ const Hits = ({
                                             className="title-hit"
                                         />
                                     </h3>
-                                    <p>$ {hit.homeCost}</p>
+                                    <p>$ {hit.price}</p>
                                 </div>
                             </li>
                         );
@@ -90,6 +89,7 @@ const HitsFederated = ({
     setShowFederatedSearch,
     setSearchVisible
 }) => {
+    
     if (hits) {
         return (
             <div className="hits-wrapper">
@@ -104,11 +104,7 @@ const HitsFederated = ({
                             return (
                                 <li
                                     key={hit.objectID}
-                                    className={`hit-list ${
-                                        hit._rankingInfo.promoted
-                                            ? 'promoted'
-                                            : ''
-                                    }`}
+                                    className="hit-list"
                                     onClick={() => {
                                         setProduct(hit);
                                         setModal(true);
@@ -134,7 +130,7 @@ const HitsFederated = ({
                                                 className="title-hit"
                                             />
                                         </h3>
-                                        <p>$ {hit.homeCost}</p>
+                                        <p>$ {hit.price}</p>
                                     </div>
                                 </li>
                             );
@@ -169,7 +165,7 @@ const HitsModal = ({ hits }) => {
                                     className="title-hit"
                                 />
                             </h3>
-                            <p>$ {hit.homeCost}</p>
+                            <p>$ {hit.price}</p>
                         </div>
                     </li>
                 ))}

@@ -426,9 +426,9 @@ const CustomFilters = ({
                         <CustomCategoriesRefinementList attribute="breadcrumbs.lvl1" />
                         <CustomTypeRefinementList attribute="breadcrumbs.lvl2" />
                         <CustomRangeSlider
-                            attribute="homeCost"
-                            min={1}
-                            max={1000}
+                            attribute="price"
+                            // min={1}
+                            // max={1000}
                         />
                         {/* <CustomColorRefinementList attribute="color" /> */}
                         {/* <CustomSizeRefinementList attribute="size" /> */}
