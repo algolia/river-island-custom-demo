@@ -10,7 +10,7 @@ const Hits = ({
     setShowFederatedSearch,
     setSearchVisible
 }) => {
-    console.log(hits)
+
     return (
         <div className="hits-wrapper">
             <div className="sort-and-stat">

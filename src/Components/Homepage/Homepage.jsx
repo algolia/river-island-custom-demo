@@ -37,6 +37,7 @@ const Homepage = ({ showFederatedSearch, setShowFederatedSearch, searchVisible, 
             <div>
                 <img src={footer} alt="home" />
             </div>
+           
         </div>
     );
 };

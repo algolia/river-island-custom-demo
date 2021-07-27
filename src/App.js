@@ -65,6 +65,8 @@ const App = () => {
                     query={query}
                     setShowFederatedSearch={setShowFederatedSearch}
                     showFederatedSearch={showFederatedSearch}
+                    setHomepage={setHomepage}
+                    homepage={homepage}
                 />
                 <Homepage
                 showFederatedSearch={showFederatedSearch}

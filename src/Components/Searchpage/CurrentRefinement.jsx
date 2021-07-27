@@ -17,7 +17,7 @@ const CurrentRefinementSR = () => {
 
 const CurrentRefinements = ({ items, refine }) => {
     const unique = uniqBy(items, 'currentRefinement');
-    console.log(items)
+
 
     return (
         <ul className="refinement-content">
@@ -53,7 +53,7 @@ const CurrentRefinements = ({ items, refine }) => {
                             onClick={event => {
                                 event.preventDefault();
                                 refine(item.value);
-                                console.log(item.value)
+                             
                             }}
                         >
                             {item.label}

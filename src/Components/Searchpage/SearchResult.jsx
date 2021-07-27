@@ -1,16 +1,20 @@
 import React, { useState } from 'react';
+import algoliasearch from 'algoliasearch/lite';
 
 import {
     Pagination,
     Configure,
     QueryRuleCustomData,
-    Index
+    Index,
+    InstantSearch
 } from 'react-instantsearch-dom';
+
+
 
 //COMPONENTS
 import { CustomHits } from './Hits';
 import { CustomFilters } from './Filters';
-// import CustomSearchBox from './SearchBox';
+import VirtualSearchBox from './VirtualSearchBox';
 import ProductDetails from '../ProductsDetails/ProductsDetails';
 import Banner from './banner';
 import CurrentRefinementSR from './CurrentRefinement'
@@ -36,13 +40,16 @@ const SearchResults = ({
     showFederatedSearch,
     setShowFederatedSearch,
     setInputValue,
-    inputValue
+    inputValue,
+    homepage
 }) => {
     // const searchClient = algoliasearch(window.appID, window.key);
     const [filterAnim, setFilterAnim] = useState(true);
     const [product, setProduct] = useState(null);
     const [modal, setModal] = useState(false);
     const [isDynamicFactesOn, setIsDynamicFactesOn] = useState(false);
+    const searchClient = algoliasearch(window.appID, window.key);
+    console.log(homepage, men)
 
     return (
         <div className="searchResult-wrapper">
@@ -50,32 +57,50 @@ const SearchResults = ({
                 className={`container-federated ${
                     showFederatedSearch ? 'active' : 'hidden'
                 }`}
-                onClick={e => {
-                    if (e.target === e.currentTarget) {
-                        setShowFederatedSearch(false);
-                    }
-                }}
+               
             >
-                <FederatedSearch
-                    query={query}
-                    setQuery={setQuery}
-                    setShowFederatedSearch={setShowFederatedSearch}
-                    showFederatedSearch={showFederatedSearch}
-                    searchVisible={searchVisible}
-                    setSearchVisible={setSearchVisible}
-                    setProduct={setProduct}
-                    setModal={setModal}
-                    setSale={setSale}
-                    setBoys={setBoys}
-                    setGirls={setGirls}
-                    setMen={setMen}
-                    setWomen={setWomen}
-                    men={men}
-                    women={women}
-                    girls={girls}
-                    boys={boys}
-                    sale={sale}
-                />
+                {women || men || girls || boys || sale || homepage ? (
+                    <div
+                    onClick={e => {
+                        console.log(e.currentTarget, e.target)
+                        if (e.target === e.currentTarget) {
+                            setShowFederatedSearch(false);
+                            setQuery('')
+                        }
+                    }}>
+                    <InstantSearch
+                    searchClient={searchClient} indexName={window.index} indexId="categoryPage"
+                    >
+                    <VirtualSearchBox 
+                        query={query}
+                        setQuery={setQuery} />
+                    <FederatedSearch
+                        query={query}
+                        setQuery={setQuery}
+                        setShowFederatedSearch={setShowFederatedSearch}
+                        showFederatedSearch={showFederatedSearch}
+                        searchVisible={searchVisible}
+                        setSearchVisible={setSearchVisible}
+                        setProduct={setProduct}
+                        setModal={setModal}
+                        setSale={setSale}
+                        setBoys={setBoys}
+                        setGirls={setGirls}
+                        setMen={setMen}
+                        setWomen={setWomen}
+                        men={men}
+                        women={women}
+                        girls={girls}
+                        boys={boys}
+                        sale={sale}
+                    />
+                    </InstantSearch>
+                    <Configure query=""/>
+                    </div>
+                ) : (
+                  null
+                )}
+
             </div>
             <div
                 className={`container ${
@@ -99,24 +124,6 @@ const SearchResults = ({
                 </QueryRuleCustomData>
                 <div></div>
                 <div className="search-panel">
-                    {/* <CustomSearchBox
-                        style={{ display: 'none' }}
-                        inputValue={inputValue}
-                        setInputValue={setInputValue}
-                        query={query}
-                        setQuery={setQuery}
-                        searchVisible={searchVisible}
-                        setSearchVisible={setSearchVisible}
-                        setShowFederatedSearch={setShowFederatedSearch}
-                        showFederatedSearch={setShowFederatedSearch}
-                    /> */}
-                    {/* <Index indexName={window.indexSugg} indexId="suggestions"> */}
-                        {/* <CustomSuggestions
-                                setQuery={setQuery}
-                                query={query}
-                                attribute="name"
-                            /> */}
-                    {/* </Index> */}
                     <Banner />
                     <CurrentRefinementSR/>
 
