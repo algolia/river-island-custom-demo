@@ -7,17 +7,22 @@ import img3 from '../../Assets/Images/img3.png';
 import img4 from '../../Assets/Images/img4.png';
 import footer from '../../Assets/Images/img5.png';
 
-const Homepage = ({ searchVisible, men, women, boys, sale, girls }) => {
+const Homepage = ({ showFederatedSearch, setShowFederatedSearch, searchVisible, men, women, boys, sale, girls }) => {
     return (
         <div
             className={`homepage-wrapper ${
                 searchVisible || women || men || boys || sale || girls ? 'hidden' : 'active'
             }`}
+           
         >
             {/* <div>
                 <img src={headerBand} alt="home" />
             </div> */}
-            <div>
+            <div  onClick={e => {
+                if (showFederatedSearch) {
+                    setShowFederatedSearch(false);
+                }
+            }}>
                 <img src={img1} alt="home" />
             </div>
             <div>

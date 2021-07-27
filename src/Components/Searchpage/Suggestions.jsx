@@ -13,11 +13,12 @@ const Suggestions = ({
     setBoys,
     setSale
 }) => {
+
     return (
         <div className="suggestions-container">
-            {hits.slice(0, 9).map(hit => (
+            {hits.slice(0, 5).map(hit => (
                 <div
-                    key={hit.name}
+                    key={hit.query}
                     className="suggestion"
                     onClick={e => {
                         setQuery(e.currentTarget.innerText);
@@ -31,7 +32,7 @@ const Suggestions = ({
                         setSale(false);
                     }}
                 >
-                    <Highlight hit={hit} attribute="name" />
+                    <Highlight hit={hit} attribute="query" />
                     {/* <p>{hit.name}</p> */}
                 </div>
             ))}

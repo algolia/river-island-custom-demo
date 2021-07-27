@@ -1,7 +1,7 @@
 import React from 'react';
 
 // ALGOLIA IMPORT
-import { Configure } from 'react-instantsearch-dom';
+import { Configure, Index, QueryRuleCustomData } from 'react-instantsearch-dom';
 
 // COMPONENT IMPORT
 import { CustomHitsFederated } from '../Searchpage/Hits';
@@ -43,6 +43,7 @@ const FederatedSearch = ({
                 <div className="federatedSearch-suggestions">
                     <div className="suggestions-content">
                         <h3>Suggestions</h3>
+                        <Index indexName={window.indexSugg} indexId="suggestions">
                         <CustomSuggestions
                             query={query}
                             setQuery={setQuery}
@@ -54,6 +55,27 @@ const FederatedSearch = ({
                             setMen={setMen}
                             setWomen={setWomen}
                         />
+                        </Index>
+                       
+                        <QueryRuleCustomData>
+                            {({ items }) => {
+                            return items.map(({injected, button, image, target, title }) => {
+                                if(injected){
+                                    return(
+                                    <div>
+                                    <div className="separator"></div>
+                                    <div className="injected-content-wrapper">
+                                       
+                                        <img src={image} alt={title}/>
+                                        <h3>{title}</h3>
+                                        <a href={target}>{button}</a>
+                                    </div>
+                                    </div>
+                                    )}
+                                })
+                            }
+                            }
+                        </QueryRuleCustomData>
                     </div>
                 </div>
                 <div className="federatedSearch-products">

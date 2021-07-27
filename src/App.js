@@ -24,7 +24,7 @@ const App = () => {
     const [homepage, setHomepage] = useState(true);
     const searchClient = algoliasearch(window.appID, window.key);
     return (
-        <div>
+        <div className="app">
             <InstantSearch searchClient={searchClient} indexName={window.index}>
                 <Header
                     setHomepage={setHomepage}
@@ -67,6 +67,8 @@ const App = () => {
                     showFederatedSearch={showFederatedSearch}
                 />
                 <Homepage
+                showFederatedSearch={showFederatedSearch}
+                    setShowFederatedSearch={setShowFederatedSearch}
                     searchVisible={searchVisible}
                     women={women}
                     men={men}

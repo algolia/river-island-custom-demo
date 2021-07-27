@@ -4,6 +4,7 @@ import React from 'react';
 import headerUp from '../../Assets/Images/headerUp.png';
 import SelectPersona from './Persona';
 import CustomSearchBox from '../Searchpage/SearchBox';
+import FederatedSearch from '../Federated Search/FederatedSearch';
 
 const Header = ({
     setSelectedOption,
@@ -30,8 +31,15 @@ const Header = ({
     //     const input = document.querySelector('#input-search2');
     //     input.focus();
     // };
+
+    if(showFederatedSearch){
+        document.body.classList.add('stop-scrolling')
+    } else {
+        document.body.classList.remove('stop-scrolling')
+    }
     return (
-        <header className="header">
+        <header className="header" 
+        >
             <img src={headerUp} alt="" className="headerUp" />
             <div className="header-wrapper">
                 <svg
@@ -160,7 +168,7 @@ const Header = ({
                         ) {
                             setShowFederatedSearch(true);
                         } 
-                        if(searchVisible) {
+                        if(searchVisible || showFederatedSearch) {
                             setShowFederatedSearch(false);
                         }
                     }}
