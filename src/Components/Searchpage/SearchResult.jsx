@@ -9,10 +9,12 @@ import {
     InstantSearch
 } from 'react-instantsearch-dom';
 
+
+
 //COMPONENTS
 import { CustomHits } from './Hits';
 import { CustomFilters } from './Filters';
-// import CustomSearchBox from './SearchBox';
+import VirtualSearchBox from './VirtualSearchBox';
 import ProductDetails from '../ProductsDetails/ProductsDetails';
 import Banner from './banner';
 import CurrentRefinementSR from './CurrentRefinement'
@@ -59,33 +61,41 @@ const SearchResults = ({
                     }
                 }}
             >
-                {/* <InstantSearch
-                searchClient={searchClient} indexName={window.index}
-                searchState={{
-                    query: 'pink'
-                  }}
-                > */}
-                <FederatedSearch
-                    query={query}
-                    setQuery={setQuery}
-                    setShowFederatedSearch={setShowFederatedSearch}
-                    showFederatedSearch={showFederatedSearch}
-                    searchVisible={searchVisible}
-                    setSearchVisible={setSearchVisible}
-                    setProduct={setProduct}
-                    setModal={setModal}
-                    setSale={setSale}
-                    setBoys={setBoys}
-                    setGirls={setGirls}
-                    setMen={setMen}
-                    setWomen={setWomen}
-                    men={men}
-                    women={women}
-                    girls={girls}
-                    boys={boys}
-                    sale={sale}
-                />
-                {/* </InstantSearch> */}
+                {women || men || girls || boys || sale ? (
+                    <div>
+                    <InstantSearch
+                    searchClient={searchClient} indexName={window.index} indexId="categoryPage"
+                    >
+                    <VirtualSearchBox 
+                        query={query}
+                        setQuery={setQuery} />
+                    <FederatedSearch
+                        query={query}
+                        setQuery={setQuery}
+                        setShowFederatedSearch={setShowFederatedSearch}
+                        showFederatedSearch={showFederatedSearch}
+                        searchVisible={searchVisible}
+                        setSearchVisible={setSearchVisible}
+                        setProduct={setProduct}
+                        setModal={setModal}
+                        setSale={setSale}
+                        setBoys={setBoys}
+                        setGirls={setGirls}
+                        setMen={setMen}
+                        setWomen={setWomen}
+                        men={men}
+                        women={women}
+                        girls={girls}
+                        boys={boys}
+                        sale={sale}
+                    />
+                    </InstantSearch>
+                    <Configure query=""/>
+                    </div>
+                ) : (
+                  null
+                )}
+
             </div>
             <div
                 className={`container ${
@@ -109,24 +119,6 @@ const SearchResults = ({
                 </QueryRuleCustomData>
                 <div></div>
                 <div className="search-panel">
-                    {/* <CustomSearchBox
-                        style={{ display: 'none' }}
-                        inputValue={inputValue}
-                        setInputValue={setInputValue}
-                        query={query}
-                        setQuery={setQuery}
-                        searchVisible={searchVisible}
-                        setSearchVisible={setSearchVisible}
-                        setShowFederatedSearch={setShowFederatedSearch}
-                        showFederatedSearch={setShowFederatedSearch}
-                    /> */}
-                    {/* <Index indexName={window.indexSugg} indexId="suggestions"> */}
-                        {/* <CustomSuggestions
-                                setQuery={setQuery}
-                                query={query}
-                                attribute="name"
-                            /> */}
-                    {/* </Index> */}
                     <Banner />
                     <CurrentRefinementSR/>
 

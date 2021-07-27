@@ -31,15 +31,6 @@ const FederatedSearch = ({
     return (
         <div className="federatedSearch">
             <div className="federatedSearch-wrapper">
-                {/* <div className="federatedSearch-categories">
-            
-            <h3>Gender</h3>
-            <CustomCateRefinementList attribute='GENDER'/>
-            <h3>Age</h3>
-            <CustomCateRefinementList attribute='age_group'/>
-            <h3>Color</h3>
-            <CustomCateRefinementList attribute='color'/> 
-        </div> */}
                 <div className="federatedSearch-suggestions">
                     <div className="suggestions-content">
                         <h3>Suggestions</h3>
