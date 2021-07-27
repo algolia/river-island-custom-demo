@@ -22,7 +22,9 @@ const Header = ({
     boys,
     girls,
     sale,
-    women
+    women,
+    homepage,
+    setHomepage
 }) => {
     // const focus = () => {
     //     const input = document.querySelector('#input-search2');
@@ -47,6 +49,8 @@ const Header = ({
                         setSale(false);
                         setQuery('');
                         setShowFederatedSearch(false);
+                        setHomepage(true)
+                        
                     }}
                 >
                     <path d="M107.4 17.1c2.4 0 4.1-0.3 5.5-1.1 1.8-1.1 2.6-3 2.6-5.4 0-2.6-0.9-4.2-2.4-5.2 -1.3-0.9-3.1-1.3-5.8-1.3h-3.1v30.6h-5.3V0.7h9.3c3.5 0 6.4 0.4 8.9 1.9 3.8 2.5 3.9 6.4 3.9 7.3 0 4.2-2.3 7.4-6.4 8.8 -0.4 0.1-0.8 0.2-1.2 0.3l10.9 15.5h-6l-12-17.5H107.4z"></path>
@@ -72,6 +76,7 @@ const Header = ({
                             setSale(false);
                             setQuery('');
                             setShowFederatedSearch(false);
+                            setHomepage(false)
                         }}
                     >
                         Women
@@ -86,6 +91,7 @@ const Header = ({
                             setQuery('');
                             setSearchVisible(false);
                             setShowFederatedSearch(false);
+                            setHomepage(false)
                         }}
                     >
                         Men
@@ -100,6 +106,7 @@ const Header = ({
                             setQuery('');
                             setSearchVisible(false);
                             setShowFederatedSearch(false);
+                            setHomepage(false)
                         }}
                     >
                         Girls
@@ -114,6 +121,7 @@ const Header = ({
                             setQuery('');
                             setSearchVisible(false);
                             setShowFederatedSearch(false);
+                            setHomepage(false)
                         }}
                     >
                         Boys
@@ -128,6 +136,7 @@ const Header = ({
                             setQuery('');
                             setSearchVisible(false);
                             setShowFederatedSearch(false);
+                            setHomepage(false)
                         }}
                     >
                         Sale
@@ -142,16 +151,17 @@ const Header = ({
                     className="search-wrapper"
                     onClick={() => {
                         if (
-                            searchVisible ||
                             men ||
                             women ||
                             girls ||
                             boys ||
-                            sale
+                            sale ||
+                            homepage
                         ) {
-                            setShowFederatedSearch(false);
-                        } else {
                             setShowFederatedSearch(true);
+                        } 
+                        if(searchVisible) {
+                            setShowFederatedSearch(false);
                         }
                     }}
                 >
