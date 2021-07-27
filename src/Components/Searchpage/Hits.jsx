@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Highlight, SortBy, Stats, connectHits } from 'react-instantsearch-dom';
+import { Highlight, SortBy, Stats, connectHits, connectCurrentRefinements } from 'react-instantsearch-dom';
 
 // MAIN SEARCH RESULT PAGE + FEDERATED
 const Hits = ({
@@ -14,7 +14,10 @@ const Hits = ({
     return (
         <div className="hits-wrapper">
             <div className="sort-and-stat">
+                <div>
                 <Stats />
+                <CustomClearRefinements />
+                </div>
                 <SortBy
                     defaultRefinement={window.index}
                     items={[
@@ -174,6 +177,18 @@ const HitsModal = ({ hits }) => {
     );
 };
 
+
+const ClearRefinements = ({ items, refine }) => (
+    <a
+        className="clearRefinement-btn"
+        onClick={() => refine(items)}
+        disabled={!items.length}
+    >
+        Clear all refinements
+    </a>
+);
+
+const CustomClearRefinements = connectCurrentRefinements(ClearRefinements);
 const CustomHits = connectHits(Hits);
 const CustomHitsModal = connectHits(HitsModal);
 const CustomHitsFederated = connectHits(HitsFederated);

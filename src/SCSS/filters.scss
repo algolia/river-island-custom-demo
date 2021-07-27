@@ -130,6 +130,36 @@
 }
 
 // Current Refinement
+
+.clearRefinement-btn{
+    // border-bottom: 1px solid $second-color;
+    font-family: $main-font;
+    font-size: 0.8rem;
+    background-color: transparent;
+    cursor: pointer;
+    margin-top: 1rem;
+    position: absolute;
+    font-style: italic;
+    z-index: 100;
+
+    &::before {
+        content: "";
+        position: absolute;
+        background-color: $second-color;
+        height: 1px;
+        width: 100%;
+        bottom: -0.5rem;
+        transform-origin: 100% 0;
+        transform: scaleX(0);
+        transition: transform 0.4s;
+    }
+
+    &:hover::before {
+        transform-origin: 0 0;
+        transform: scaleX(1);
+    }
+}
+
 .refinement-content {
     display: flex;
     justify-content: center;
@@ -138,13 +168,14 @@
     margin: 0 auto;
     height: auto;
     transform: translateX(0%);
-    transform: translateY(6rem);
+    transform: translateY(2rem);
     z-index: 999;
     .refinement-item {
         display: flex;
         align-items: center;
-        margin-bottom: 1em;
+        margin-bottom: -4em;
         justify-content: center;
+        position: relative;
         a {
             @include btn;
         }
