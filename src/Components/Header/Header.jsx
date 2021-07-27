@@ -174,6 +174,12 @@ const Header = ({
                         setSearchVisible={setSearchVisible}
                         style={{ width: '350px' }}
                         setMen={setMen}
+                        setHomepage={setHomepage}
+                        setSale={setSale}
+                        setBoys={setBoys}
+                        setGirls={setGirls}
+                        setHomepage={setHomepage}
+                        setWomen={setWomen}
                     />
                     <svg
                         viewBox="0 0 897 897"

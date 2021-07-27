@@ -22,7 +22,14 @@ const SearchBox = ({
     women,
     girls,
     boys,
-    sale
+    sale,
+    setMen,
+    setWomen,
+    setGirls,
+    setBoys,
+    setSale,
+    setHomepage
+
 }) => {
     if (query === '') {
         refine('');
@@ -109,6 +116,12 @@ const SearchBox = ({
                             setQuery(query);
                             setShowFederatedSearch(false);
                             setSearchVisible(true);
+                            setMen(false);
+                            setWomen(false);
+                            setGirls(false);
+                            setBoys(false);
+                            setSale(false);
+                            setHomepage(false)
                         }}
                     >
                         <input
