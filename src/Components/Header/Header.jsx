@@ -39,6 +39,12 @@ const Header = ({
     }
     return (
         <header className="header" 
+        onClick={() =>{
+            if(showFederatedSearch){
+                setShowFederatedSearch(false)
+                setQuery('')
+            }}
+        } 
         >
             <img src={headerUp} alt="" className="headerUp" />
             <div className="header-wrapper">
@@ -157,7 +163,8 @@ const Header = ({
                 </ul>
                 <div
                     className="search-wrapper"
-                    onClick={() => {
+                    onClick={(e) => {
+                        console.log(e)
                         if (
                             men ||
                             women ||
@@ -168,7 +175,7 @@ const Header = ({
                         ) {
                             setShowFederatedSearch(true);
                         } 
-                        if(searchVisible || showFederatedSearch) {
+                        if(searchVisible) {
                             setShowFederatedSearch(false);
                         }
                     }}

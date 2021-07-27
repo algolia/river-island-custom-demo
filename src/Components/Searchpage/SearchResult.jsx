@@ -40,7 +40,8 @@ const SearchResults = ({
     showFederatedSearch,
     setShowFederatedSearch,
     setInputValue,
-    inputValue
+    inputValue,
+    homepage
 }) => {
     // const searchClient = algoliasearch(window.appID, window.key);
     const [filterAnim, setFilterAnim] = useState(true);
@@ -48,21 +49,25 @@ const SearchResults = ({
     const [modal, setModal] = useState(false);
     const [isDynamicFactesOn, setIsDynamicFactesOn] = useState(false);
     const searchClient = algoliasearch(window.appID, window.key);
-    console.log(query)
+    console.log(homepage, men)
+
     return (
         <div className="searchResult-wrapper">
             <div
                 className={`container-federated ${
                     showFederatedSearch ? 'active' : 'hidden'
                 }`}
-                onClick={e => {
-                    if (e.target === e.currentTarget) {
-                        setShowFederatedSearch(false);
-                    }
-                }}
+               
             >
-                {women || men || girls || boys || sale ? (
-                    <div>
+                {women || men || girls || boys || sale || homepage ? (
+                    <div
+                    onClick={e => {
+                        console.log(e.currentTarget, e.target)
+                        if (e.target === e.currentTarget) {
+                            setShowFederatedSearch(false);
+                            setQuery('')
+                        }
+                    }}>
                     <InstantSearch
                     searchClient={searchClient} indexName={window.index} indexId="categoryPage"
                     >
