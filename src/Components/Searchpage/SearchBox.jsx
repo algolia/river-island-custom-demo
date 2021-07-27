@@ -89,6 +89,7 @@ const SearchBox = ({
                 <div className="searchBox-wrapper">
                     <form
                         action=""
+                        autocomplete="off"
                         role="search"
                         onSubmit={e => {
                             e.preventDefault();
@@ -98,7 +99,7 @@ const SearchBox = ({
                         }}
                     >
                         <input
-                        autocomplete="off"
+                            autocomplete="off"
                             id="input-search2"
                             type="search"
                             value={query}
@@ -140,6 +141,7 @@ const SearchBox = ({
                 <div className="searchBox-wrapper">
                     <form
                         action=""
+                        autocomplete="off"
                         role="search"
                         onSubmit={e => {
                             e.preventDefault();
@@ -164,6 +166,7 @@ const SearchBox = ({
                                 refine(query);
                             }}
                             placeholder="Search..."
+                            autocomplete="off"
                         />
                     </form>
                     {/* <VoiceSearch searchAsYouSpeak={false} language={'en-US'} /> */}
