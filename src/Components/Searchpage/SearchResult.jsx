@@ -41,7 +41,9 @@ const SearchResults = ({
     setShowFederatedSearch,
     setInputValue,
     inputValue,
+    setHomepage,
     homepage
+
 }) => {
     // const searchClient = algoliasearch(window.appID, window.key);
     const [filterAnim, setFilterAnim] = useState(true);
@@ -93,6 +95,7 @@ const SearchResults = ({
                         girls={girls}
                         boys={boys}
                         sale={sale}
+                        setHomepage={setHomepage}
                     />
                     </InstantSearch>
                     <Configure query=""/>

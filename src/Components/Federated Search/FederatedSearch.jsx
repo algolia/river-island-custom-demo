@@ -26,6 +26,7 @@ const FederatedSearch = ({
     women,
     girls,
     boys,
+    setHomepage,
     sale
 }) => {
     return (
@@ -45,6 +46,7 @@ const FederatedSearch = ({
                             setGirls={setGirls}
                             setMen={setMen}
                             setWomen={setWomen}
+                            setHomepage={setHomepage}
                         />
                         </Index>
                        

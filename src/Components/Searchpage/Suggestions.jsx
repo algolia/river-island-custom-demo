@@ -11,9 +11,10 @@ const Suggestions = ({
     setMen,
     setGirls,
     setBoys,
-    setSale
+    setSale,
+    setHomepage
 }) => {
-
+console.log(setHomepage)
     return (
         <div className="suggestions-container">
             {hits.slice(0, 5).map(hit => (
@@ -22,14 +23,14 @@ const Suggestions = ({
                     className="suggestion"
                     onClick={e => {
                         setQuery(e.currentTarget.innerText);
+                        setSearchVisible(true);
                         setShowFederatedSearch(false);
-                        setSearchVisible(true);
                         setWomen(false);
-                        setSearchVisible(true);
                         setMen(false);
                         setGirls(false);
                         setBoys(false);
                         setSale(false);
+                        setHomepage(false);
                     }}
                 >
                     <Highlight hit={hit} attribute="query" />
